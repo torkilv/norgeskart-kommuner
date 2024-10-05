@@ -1,4 +1,5 @@
 import './App.css';
+import projects from './projects.js';
 
 function Intro() {
   return <div className="Intro">
@@ -7,20 +8,33 @@ function Intro() {
   </div>
 }
 
-function ProjectList({projects}) {
+function Body() {
+  return <div className="body">
+    <ProjectList></ProjectList>
+  </div>
+}
+
+function ProjectList() {
   return (
-    <div className="projectList body">
-    <h1>Projects</h1>
     <section>
-      {/* Projects */}
-      <h3></h3>
+    <h1>Projects</h1>
+    {projects.map(project => (
+        <Project key={project.id} project={project} />
+      ))}
     </section>
-    </div>
   )
 }
 
 function Project({project}) {
-  
+  return (
+    // set colour
+    <div class="project">
+      <a href={project.url}>
+        <h3>{project.title}</h3>
+        <p>{project.description}</p>
+      </a>
+    </div>
+  );  
 }
 
 function App() {
@@ -29,7 +43,7 @@ function App() {
       <header className="header">
         <Intro></Intro>
       </header>
-        <ProjectList></ProjectList>
+      <Body></Body>
     </div>
   );
 }
