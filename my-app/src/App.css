@@ -5,11 +5,11 @@
 }
 
 .header {
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
   display: flex;
   flex-direction: column;
-  font-size: calc(10px + 2vmin);
+  font-size: large;
   color: white;
 }
 
@@ -22,9 +22,9 @@
 
 .body {
   color: white;
-  padding-left: 150px;
-  padding-right: 150px;
-  padding-top: 150px;
+  padding-left: 7.5%;
+  padding-right: 7.5%;
+  padding-top: 7.5%;
 }
 
 .project {

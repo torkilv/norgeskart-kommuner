@@ -3,8 +3,10 @@ import projects from './projects.js';
 
 function Intro() {
   return <div className="Intro">
-    <h2>Sophie Stone</h2>
-    {/* Sites */}
+    <h1>Sophie Stone</h1>
+    <a href="https://github.com/smstone0">    
+      <img src="github-mark/github-mark-white.svg" alt="GitHub" width="32.66" height= "32"></img>
+    </a>
   </div>
 }
 
