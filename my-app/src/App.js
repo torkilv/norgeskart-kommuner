@@ -38,11 +38,14 @@ function ProjectList() {
 function Project({project}) {
   return (
     <div class="project">
+      <p id="date">{project.date}</p>
+      <h3>{project.title}</h3>
       <a href={project.url}>
-        <h3>{project.title}</h3>
-        <p>{project.date}</p>
-        <p>{project.description}</p>
+        <div className="image-container">
+          <img src={project.thumbnail} alt={project.url}></img>
+        </div>
       </a>
+      <p>{project.description}</p>
     </div>
   );  
 }

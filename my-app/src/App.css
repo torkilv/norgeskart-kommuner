@@ -1,5 +1,4 @@
 #App {
-  /* text-align: center; */
   background-color: black;
   min-height: 100vh;
   color: white;
@@ -23,6 +22,35 @@
 
 .project {
   word-break: break-all;
+}
+
+#date {
+  font-size: small;
+}
+
+.image-container {
+  width: 375px;
+  height: 250px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+}
+
+.image-container img {
+  height: 100%;
+  object-fit: cover;
+  
+}
+
+.project img {
+  /* height: auto;
+  max-width: 300px;
+  border-radius: 15px;
+  background-color: white;
+  padding-left: 10%;
+  padding-right: 10%; */
 }
 
 a {
