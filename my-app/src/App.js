@@ -2,7 +2,7 @@ import './App.css';
 import projects from './projects.js';
 
 function Header() {
-  return <div className="Header">
+  return <div id="Header">
     <h1>Sophie Stone</h1>
     <div id="icons">
     <a href="https://github.com/smstone0">    
@@ -10,14 +10,14 @@ function Header() {
     </a>
     <div id="icon-padding"></div>
     <a href="https://www.linkedin.com/in/sophie-stone-/">    
-      <img src="/In-White-96.png" alt="LinkedIn" width="32.66" height= "32"></img>
+      <img src="/In-White-96.png" alt="LinkedIn" width="32" height= "32"></img>
     </a>
     </div>
   </div>
 }
 
 function Body() {
-  return <div className="body">
+  return <div id="body">
     <ProjectList></ProjectList>
   </div>
 }
@@ -49,7 +49,7 @@ function Project({project}) {
 
 function App() {
   return (
-    <div className="App">
+    <div id="App">
       <header>
         <Header></Header>
       </header>

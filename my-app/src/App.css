@@ -1,11 +1,11 @@
-.App {
+#App {
   /* text-align: center; */
   background-color: black;
   min-height: 100vh;
   color: white;
 }
 
-.Header {
+#Header {
   font-size: medium;
   padding-left: 2.5%;
   padding-right: 2.5%;
@@ -15,15 +15,14 @@
   justify-content: space-between;
 }
 
-.body {
+#body {
   padding-left: 7.5%;
   padding-right: 7.5%;
   padding-top: 7.5%;
 }
 
 .project {
-  padding-left: 5%;
-  padding-right: 5%;
+  word-break: break-all;
 }
 
 a {
@@ -32,6 +31,7 @@ a {
 }
 
 #projectList {
+  justify-content: space-evenly;
   display: flex;
   flex-wrap: wrap;
 }
