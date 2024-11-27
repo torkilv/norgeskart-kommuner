@@ -1,9 +1,9 @@
 import React from 'react';
 
-function Map_UK() {
+function MapUK() {
     return (
         <p>Test</p>
     )
 }
 
-export default Map_UK;
+export default MapUK;
