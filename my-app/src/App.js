@@ -1,5 +1,7 @@
 import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import projects from './projects.js';
+import Map_UK from './uk-map/map.js';
 
 function Header() {
   return <div id="Header">
@@ -41,6 +43,7 @@ function Project({project}) {
       <p id="date">{project.date}</p>
       <h3>{project.title}</h3>
         <div className="image-container">
+          {/* figma/flutter etc buttons to indicate tech used for each project */}
           <a className="image-container" href={project.url}>
             <img src={project.thumbnail} alt={project.url}></img>
           </a>
@@ -51,6 +54,17 @@ function Project({project}) {
 }
 
 function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage/>}/>
+        <Route path="/uk-map" element={<Map_UK/>} />
+      </Routes>
+    </Router>
+  );
+}
+
+function HomePage() {
   return (
     <div id="App">
       <header>
