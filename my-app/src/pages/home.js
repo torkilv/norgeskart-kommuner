@@ -30,18 +30,15 @@ function HomePage() {
       </section>
     )
   }
-
+  
   function Project({project}) {
     return (
       <div class="project">
         <p id="date">{project.date}</p>
         <h3>{project.title}</h3>
-          <div className="image-container">
-            {/* figma/flutter etc buttons to indicate tech used for each project */}
-            <a className="image-container" href={project.url}>
-              <img src={project.thumbnail} alt={project.url}></img>
-            </a>
-          </div>
+          <a class="image-container" href={project.url}>
+            <img src={project.thumbnail} alt={project.url}></img>
+          </a>
         <p>{project.description}</p>
       </div>
     );  
