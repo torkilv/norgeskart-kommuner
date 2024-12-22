@@ -1,6 +1,5 @@
 const projects = [
     {
-        id: 1,
         title: "Software Engineering Group Project",
         date: "Sep 2023 - Jun 2024",
         description: "University group project to develop an event-finding app for industry partner, Lots For Tots",
@@ -9,7 +8,6 @@ const projects = [
         languages: ["Flutter", "Figma"]
     },
     {
-        id: 2,
         title: "Caloric",
         date: "Jun 2023 - Sep 2023",
         description: "Calorie counting app with minimalist features",

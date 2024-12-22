@@ -5,16 +5,16 @@ function HomePage() {
     return (
       <div id="App">
         <header>
-          <Header></Header>
+          <Header/>
         </header>
-        <Body></Body>
+        <Body/>
       </div>
     );
   }
 
   function Body() {
     return <div id="body">
-      <ProjectList></ProjectList>
+      <ProjectList/>
     </div>
   }
 
@@ -23,8 +23,8 @@ function HomePage() {
       <section>
       <h1>Projects</h1>
       <div id="projectList">
-      {projects.map(project => (
-          <Project key={project.id} project={project} />
+      {projects.map((project, index) => (
+          <Project key={index} project={project} />
         ))}
         </div>
       </section>

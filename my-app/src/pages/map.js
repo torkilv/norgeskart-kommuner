@@ -2,7 +2,7 @@ import React from 'react';
 
 function MapUK() {
     return (
-        <p>Test</p>
+        <p>Work in progress</p>
     )
 }
 
