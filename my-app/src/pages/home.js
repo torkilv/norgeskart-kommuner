@@ -1,5 +1,5 @@
 import React from 'react';
-import projects from '../projects.js'
+import Projects from '../projects/Projects.js'
 
 function HomePage() {
     return (
@@ -14,40 +14,8 @@ function HomePage() {
 
   function Body() {
     return <div id="body">
-      <ProjectList/>
+      <Projects/>
     </div>
-  }
-
-  function ProjectList() {
-    return (
-      <section>
-      <h1>Projects</h1>
-      <div id="projectList">
-      {projects.map((project, index) => (
-          <Project key={index} project={project} />
-        ))}
-        </div>
-      </section>
-    )
-  }
-  
-  function Project({project}) {
-    return (
-      <div class="project">
-        <p id="date">{project.date}</p>
-        <h3>{project.title}</h3>
-          <a class="image-container" href={project.url}>
-            <img src={project.thumbnail} alt={project.url}></img>
-          </a>
-        <p>{project.description}</p>
-        <div className='languages'>
-          {project.languages.map((language, index) => (
-            <span key={index} className="language">{language}</span>
-          ))}
-        </div>
-      </div>
-      
-    );  
   }
 
   function Header() {

@@ -14,70 +14,15 @@
   justify-content: space-between;
 }
 
-.languages {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.language {
-  background-color: #d6f2b3;
-  color: black;
-  padding: 5px 15px;
-  margin-right: 5px;
-  border-radius: 10px;
-}
-
 #body {
   padding-left: 7.5%;
   padding-right: 7.5%;
   padding-top: 7.5%;
 }
 
-.project {
-  word-break: break-all;
-  background-color: #111;
-  border-radius: 15px;
-  padding-left: 2.5%;
-  padding-right: 2.5%;
-  padding-top: 0.5%;
-  padding-bottom: 0.5%;
-  margin-bottom: 2.5%;
-}
-
-#date {
-  font-size: small;
-}
-
-.image-container {
-  width: 375px;
-  height: 250px;
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 15px;
-  overflow: hidden;
-}
-
-.image-container img {
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.image-container img:hover {
-  transform: scale(1.1);
-}
-
 a {
   color: white;
   text-decoration: none;
-}
-
-#projectList {
-  justify-content: space-evenly;
-  display: flex;
-  flex-wrap: wrap;
 }
 
 #icons {
