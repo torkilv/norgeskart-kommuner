@@ -40,7 +40,7 @@ function HomePage() {
             <img src={project.thumbnail} alt={project.url}></img>
           </a>
         <p>{project.description}</p>
-        <div>
+        <div className='languages'>
           {project.languages.map((language, index) => (
             <span key={index} className="language">{language}</span>
           ))}
