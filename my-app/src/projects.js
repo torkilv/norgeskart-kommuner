@@ -5,7 +5,7 @@ const projects = [
         description: "Calorie counting app with minimalist features",
         url: "https://www.figma.com/design/ojnG7Z2LYuzCuDM0TMUUiA/Caloric?node-id=0-1&node-type=canvas&t=lJdGKqTurMDbI7DR-0",
         thumbnail: "assets/caloric/caloric.png",
-        languages: ["Flutter", "Figma", "SQL"]
+        languages: ["Flutter", "SQL", "Figma"]
     },
     {
         title: "Software Engineering Group Project",
@@ -22,7 +22,5 @@ const projects = [
         languages: ["C"]
     },
 ]
-
-
 
 export default projects;
