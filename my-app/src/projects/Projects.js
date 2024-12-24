@@ -18,12 +18,16 @@ import './Projects.css';
   function Project({project}) {
     return (
       <div class="project">
-        <p id="date">{project.date}</p>
-        <h3>{project.title}</h3>
-        <a class="image-container" href={project.url}>
-        <img src={project.thumbnail} alt={project.url}></img>
-        </a>
-        <p>{project.description}</p>
+        <div id="title">
+          <h3>{project.title}</h3>
+          <p id="date">{project.date}</p>
+        </div>
+        <div id="image-description">
+          <a class="image-container" href={project.url}>
+          <img src={project.thumbnail} alt={project.url}></img>
+          </a>
+          <p id="description">{project.description}</p>
+        </div>
         <div className='languages'>
           {project.languages.map((language, index) => (
             <span key={index} className="language">{language}</span>
