@@ -18,7 +18,7 @@ import './Projects.css';
   function Project({project}) {
     return (
       <div class="project">
-        <div id="title">
+        <div id="title-date">
           <h3>{project.title}</h3>
           <p id="date">{project.date}</p>
         </div>

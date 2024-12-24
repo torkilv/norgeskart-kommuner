@@ -58,13 +58,13 @@
     transform: scale(1.1);
 }
 
-@media (min-width: 768px) {
+#title-date {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+}
 
-    #title {
-        justify-content: space-between;
-        display: flex;
-        align-items: center;
-    }
+@media (min-width: 768px) {
 
     #image-description {
         display: flex;

@@ -23,7 +23,7 @@ function Home() {
       <h1>Sophie Stone</h1>
       <div id="icons">
       <a href="https://github.com/smstone0">    
-      <img src="assets/github-mark/github-mark-white.svg" alt="GitHub" width="32.66" height= "32"></img>
+      <img src="assets/github/github-mark-white.svg" alt="GitHub" width="32.66" height= "32"></img>
       </a>
       <div id="icon-padding"></div>
       <a href="https://www.linkedin.com/in/sophie-stone-/">    
