@@ -1,7 +1,7 @@
 import React from 'react';
 import Projects from '../projects/Projects.js'
 
-function HomePage() {
+function Home() {
     return (
       <div id="App">
         <header>
@@ -13,7 +13,7 @@ function HomePage() {
   }
 
   function Body() {
-    return <div id="body">
+    return <div id="Body">
       <Projects/>
     </div>
   }
@@ -33,4 +33,4 @@ function HomePage() {
     </div>
   }
 
-export default HomePage;
+export default Home;
