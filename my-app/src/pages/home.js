@@ -27,7 +27,7 @@ function Home() {
       </a>
       <div id="icon-padding"></div>
       <a href="https://www.linkedin.com/in/sophie-stone-/">    
-      <img src="/assets/In-White-96.png" alt="LinkedIn" width="32" height= "32"></img>
+      <img src="/assets/linkedin.png" alt="LinkedIn" width="32" height= "32"></img>
       </a>
       </div>
     </div>
