@@ -3,7 +3,7 @@ import Projects from '../projects/Projects.js'
 
 function Home() {
     return (
-      <div id="App">
+      <div id="Home">
         <header>
           <Header/>
         </header>

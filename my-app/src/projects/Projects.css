@@ -11,6 +11,12 @@
     border-radius: 10px;
 }
 
+#projects {
+    justify-content: space-evenly;
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .project {
     word-break: break-all;
     background-color: #111;
@@ -46,10 +52,3 @@
   .image-container img:hover {
     transform: scale(1.1);
 }
-
-#projects {
-    justify-content: space-evenly;
-    display: flex;
-    flex-wrap: wrap;
-}
-
