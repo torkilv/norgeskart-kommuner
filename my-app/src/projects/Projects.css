@@ -26,11 +26,8 @@
     padding-bottom: 0.5%;
     margin-bottom: 2.5%;
     max-width: 100%;
+    /* small screen width: img width */
   }
-
-#description {
-    margin-left: 2.5%;
-}
   
 #date {
     font-size: small;
@@ -58,14 +55,7 @@
     transform: scale(1.1);
 }
 
-#title-date {
-    justify-content: space-between;
-    display: flex;
-    align-items: center;
-}
-
 @media (min-width: 768px) {
-
     #image-description {
         display: flex;
         align-items: start;
@@ -73,5 +63,19 @@
 
     .languages {
         margin-top: 20px;
+    }
+
+    #title-date {
+        justify-content: space-between;
+        display: flex;
+        align-items: center;       
+    }
+
+    #description {
+        margin-left: 2.5%;
+    }
+
+    .project {
+        width: 80%;
     }
  }
