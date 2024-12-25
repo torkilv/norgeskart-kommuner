@@ -25,8 +25,7 @@
     padding-top: 0.5%;
     padding-bottom: 0.5%;
     margin-bottom: 2.5%;
-    max-width: 100%;
-    /* small screen width: img width */
+    width: 100%;
   }
   
 #date {
@@ -34,7 +33,6 @@
 }
 
 .image-container {
-    width: 375px;
     height: 250px;
     max-width: 100%;
     background-color: white;
@@ -75,7 +73,13 @@
         margin-left: 2.5%;
     }
 
+    .image-container {
+        min-width: 375px;
+    }
+ }
+
+@media (min-width: 1024px) {
     .project {
         width: 80%;
     }
- }
+}
