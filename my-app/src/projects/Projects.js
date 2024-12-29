@@ -26,7 +26,10 @@ import './Projects.css';
           <a class="image-container" href={project.url}>
           <img src={project.thumbnail} alt={project.url}></img>
           </a>
-          <p id="description">{project.description}</p>
+          <div>
+            <p class="content" id="description">{project.description}</p>
+            <p class="content">{project.detail}</p>
+          </div>
         </div>
         <div className='languages'>
           {project.languages.map((language, index) => (

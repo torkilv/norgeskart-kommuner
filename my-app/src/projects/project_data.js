@@ -2,7 +2,11 @@ const projects = [
     {
         title: "Caloric",
         date: "Jun 2023 - present",
-        description: `Calorie counting app with minimalist features`,
+        description: `Cross-platform calorie counting app designed for minimalism and simplicity`,
+        detail: `
+- Began as a personal project over the summer of 2023 to teach myself mobile development and interface design
+- Provides a beginner-friendly method to track nutrition compared with other apps by focusing on the essentials, eliminating details such as macros and meal times
+- Currently in progress with plans to complete by the end of 2025`,
         url: "https://www.figma.com/design/ojnG7Z2LYuzCuDM0TMUUiA/Caloric?node-id=0-1&node-type=canvas&t=lJdGKqTurMDbI7DR-0",
         thumbnail: "assets/caloric/caloric.png",
         languages: ["Flutter", "SQL", "Figma"]
