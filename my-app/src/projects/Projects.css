@@ -18,7 +18,7 @@
 }
 
 .project {
-    background-color: #111;
+    background-color: rgba(25, 25, 25, 0.5);
     border-radius: 15px;
     padding-left: 2.5%;
     padding-right: 2.5%;
