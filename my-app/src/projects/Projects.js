@@ -36,6 +36,10 @@ import './Projects.css';
             <span key={index} className="language">{language}</span>
           ))}
         </div>
+        <div id="code-design">
+          {project.codeUrl && (<a href={project.codeUrl}>Code</a>)}
+          {project.designUrl && (<a href={project.designUrl}>Design</a>)}
+        </div>
       </div>
       
     );  
