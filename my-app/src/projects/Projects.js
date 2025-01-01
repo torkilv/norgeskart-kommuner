@@ -19,7 +19,7 @@ import './Projects.css';
     return (
       <div class="project">
         <div id="title-date">
-          <h3>{project.title}</h3>
+          <h3 id="title">{project.title}</h3>
           <p id="date">{project.date}</p>
         </div>
         <div id="image-description">
