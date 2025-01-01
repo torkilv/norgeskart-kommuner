@@ -1,7 +1,7 @@
-/* .languages {
+.languages {
     margin-top: 10px;
     margin-bottom: 10px;
-} */
+}
 
 .language {
     background-color: #003A49;
@@ -111,9 +111,3 @@
         min-width: 375px;
     }
  }
-
-@media (min-width: 1024px) {
-    .project {
-        width: 80%;
-    }
-}

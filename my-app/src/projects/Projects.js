@@ -4,14 +4,14 @@ import './Projects.css';
 
   function Projects() {
     return (
-      <section>
-      <h1>Projects</h1>
-      <div id="projects">
-      {projects.map((project, index) => (
-          <Project key={index} project={project} />
-        ))}
-        </div>
-      </section>
+      <div>
+        <h1>Projects</h1>
+        <div id="projects">
+        {projects.map((project, index) => (
+            <Project key={index} project={project} />
+          ))}
+          </div>
+      </div>
     )
   }
   
