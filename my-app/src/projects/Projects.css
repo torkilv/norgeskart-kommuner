@@ -1,14 +1,17 @@
-.languages {
+/* .languages {
     margin-top: 10px;
     margin-bottom: 10px;
-}
+} */
 
 .language {
-    background-color: #d6f2b3;
-    color: black;
+    background-color: #003A49;
+    color: #8EE8FF;
+    font-weight: 500;
     padding: 5px 15px;
     margin-right: 5px;
-    border-radius: 10px;
+    border-radius: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 #projects {
