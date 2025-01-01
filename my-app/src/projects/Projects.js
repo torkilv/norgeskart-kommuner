@@ -5,7 +5,7 @@ import './Projects.css';
   function Projects() {
     return (
       <div>
-        <h1>Projects</h1>
+        <h2>Projects</h2>
         <div id="projects">
         {projects.map((project, index) => (
             <Project key={index} project={project} />
