@@ -4,22 +4,22 @@ import './Projects.css';
 
   function Projects() {
     return (
-      <section>
-      <h1>Projects</h1>
-      <div id="projects">
-      {projects.map((project, index) => (
-          <Project key={index} project={project} />
-        ))}
-        </div>
-      </section>
+      <div>
+        <h2>Projects</h2>
+        <div id="projects">
+        {projects.map((project, index) => (
+            <Project key={index} project={project} />
+          ))}
+          </div>
+      </div>
     )
   }
-  
+
   function Project({project}) {
     return (
       <div class="project">
         <div id="title-date">
-          <h3>{project.title}</h3>
+          <h3 id="title">{project.title}</h3>
           <p id="date">{project.date}</p>
         </div>
         <div id="image-description">
@@ -37,12 +37,23 @@ import './Projects.css';
           ))}
         </div>
         <div id="code-design">
-          {project.codeUrl && (<a href={project.codeUrl}>Code</a>)}
-          {project.designUrl && (<a href={project.designUrl}>Design</a>)}
+          <Link text="Code" url={project.codeUrl} />
+          <Link text="Design" url={project.designUrl} />
         </div>
       </div>
-      
-    );  
+
+    );
+  }
+
+  function Link({text, url}) {
+    return (
+      url && (
+        <span id="link">
+          <img src='../../assets/link.svg'></img>
+          <a href={url}>{text}</a>
+        </span>
+        )
+    );
   }
 
 export default Projects;
