@@ -14,7 +14,7 @@ import './Projects.css';
       </div>
     )
   }
-  
+
   function Project({project}) {
     return (
       <div class="project">
@@ -37,12 +37,23 @@ import './Projects.css';
           ))}
         </div>
         <div id="code-design">
-          {project.codeUrl && (<a href={project.codeUrl}>Code</a>)}
-          {project.designUrl && (<a href={project.designUrl}>Design</a>)}
+          <Link text="Code" url={project.codeUrl} />
+          <Link text="Design" url={project.designUrl} />
         </div>
       </div>
-      
-    );  
+
+    );
+  }
+
+  function Link({text, url}) {
+    return (
+      url && (
+        <span id="link">
+          <img src='../../assets/link.svg'></img>
+          <a href={url}>{text}</a>
+        </span>
+        )
+    );
   }
 
 export default Projects;

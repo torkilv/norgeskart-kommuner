@@ -69,6 +69,7 @@
 #code-design {
     justify-self: end;
     display: flex;
+    gap: 20px;
 }
 
 #code-design a {
@@ -80,7 +81,7 @@
 }
 
 #code-design a:hover {
-    color: #d6f2b3;
+    color: #8EE8FF;
 }
 
 @media (min-width: 768px) {
