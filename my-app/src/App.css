@@ -26,6 +26,12 @@
   gap: 7.5%;
 }
 
+#name {
+  background-image: radial-gradient(#8EE8FF, orchid);
+  color: transparent;
+  background-clip: text;
+}
+
 @media (max-width: 1600px) {
   #Content {
       width: 80%;

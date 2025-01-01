@@ -16,7 +16,7 @@ function Home() {
   
   function Header() {
     return <div id="Header">
-      <h1>Sophie Stone</h1>
+      <h1 id="name">Sophie Stone</h1>
       <div id="icons">
         <a href="https://github.com/smstone0">    
         <img src="assets/github/github-mark-white.svg" alt="GitHub" width="32.66" height= "32"></img>
