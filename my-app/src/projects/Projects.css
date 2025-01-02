@@ -1,6 +1,7 @@
 .languages {
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 15px;
 }
 
 .language {
@@ -92,6 +93,7 @@
     font-weight: 500;
     text-decoration: none;
     color: white;
+    margin-bottom: 15px;
 }
 
 #link:hover {
@@ -106,20 +108,26 @@
     padding-right: 5px;
 }
 
-.languages-and-links {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 @media (min-width: 768px) {
+    .languages-and-links {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
     #image-description {
         display: flex;
         align-items: start;
     }
 
     .languages {
-        margin-top: 20px;
+        margin-bottom: 0;
+    }
+
+    #link {
+        margin-bottom: 0;
     }
 
     #description {
