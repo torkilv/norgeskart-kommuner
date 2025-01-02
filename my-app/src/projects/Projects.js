@@ -32,14 +32,16 @@ import {ReactComponent as LinkIcon} from '../assets/link.svg';
             <p id="description-body">{project.detail}</p>
           </div>
         </div>
-        <div className='languages'>
-          {project.languages.map((language, index) => (
-            <span key={index} className="language">{language}</span>
-          ))}
-        </div>
-        <div id="code-design">
-          <Link text="Code" url={project.codeUrl} />
-          <Link text="Design" url={project.designUrl} />
+        <div className='languages-and-links'>
+          <div className='languages'>
+            {project.languages.map((language, index) => (
+              <span key={index} className="language">{language}</span>
+            ))}
+          </div>
+          <div id="code-design">
+            <Link text="Code" url={project.codeUrl} />
+            <Link text="Design" url={project.designUrl} />
+          </div>
         </div>
       </div>
 

@@ -1,6 +1,6 @@
 .languages {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .language {
@@ -10,8 +10,6 @@
     padding: 5px 15px;
     margin-right: 5px;
     border-radius: 15px;
-    margin-top: 10px;
-    margin-bottom: 10px;
 }
 
 #projects {
@@ -42,6 +40,8 @@
     font-size: 1.5em;
     font-weight: 500;
     color: #8EE8FF;
+    margin-top: 0;
+    margin-bottom: 10px;
 }
   
 #date {
@@ -72,7 +72,6 @@
 
 .content {
     white-space: pre-wrap;
-    margin-right: 15%;
 }
 
 #description {
@@ -85,7 +84,6 @@
 }
 
 #code-design {
-    justify-self: end;
     display: flex;
     gap: 20px;
 }
@@ -94,8 +92,6 @@
     font-weight: 500;
     text-decoration: none;
     color: white;
-    margin-left: 10px;
-    margin-bottom: 10px;
 }
 
 #link:hover {
@@ -110,6 +106,12 @@
     padding-right: 5px;
 }
 
+.languages-and-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 @media (min-width: 768px) {
     #image-description {
         display: flex;
@@ -122,6 +124,7 @@
 
     #description {
         padding-top: 0;
+        margin-top: 0;
     }
 
     #title-date {
@@ -132,9 +135,20 @@
 
     .content {
         margin-left: 2.5%;
+        margin-right: 1%;
     }
 
     .image-container {
         min-width: 375px;
+    }
+ }
+
+ @media (min-width: 1400px) {
+    .content {
+        margin-right: 10%;
+    }
+
+    #description {
+        padding-top: 2.5%;
     }
  }
