@@ -31,6 +31,13 @@
     width: 100%;
   }
 
+  .project:hover {
+    background-color: rgba(25, 25, 25, 0.7);
+    box-shadow: #8EE8FF 0px 0px 10px;
+    transition: background-color 0.3s ease;
+    transition: box-shadow 0.3s ease;
+  }
+
 #title {
     font-size: 1.5em;
     font-weight: 500;
