@@ -49,10 +49,9 @@ import {ReactComponent as LinkIcon} from '../assets/link.svg';
   function Link({text, url}) {
     return (
       url && (
-        <span id="link">
-          <LinkIcon/>
-          <a href={url}>{text}</a>
-        </span>
+        <a id="link" href={url}>
+          <span><LinkIcon/>{text}</span>
+        </a>
         )
     );
   }
