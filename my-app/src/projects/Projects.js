@@ -1,6 +1,7 @@
 import React from 'react';
 import projects from './project_data.js';
 import './Projects.css';
+import {ReactComponent as LinkIcon} from '../assets/link.svg';
 
   function Projects() {
     return (
@@ -26,19 +27,21 @@ import './Projects.css';
           <a class="image-container" href={project.url}>
           <img src={project.thumbnail} alt={project.url}></img>
           </a>
-          <div>
-            <p class="content" id="description">{project.description}</p>
-            <p class="content">{project.detail}</p>
+          <div class="content">
+            <p id="description">{project.description}</p>
+            <p id="description-body">{project.detail}</p>
           </div>
         </div>
-        <div className='languages'>
-          {project.languages.map((language, index) => (
-            <span key={index} className="language">{language}</span>
-          ))}
-        </div>
-        <div id="code-design">
-          <Link text="Code" url={project.codeUrl} />
-          <Link text="Design" url={project.designUrl} />
+        <div className='languages-and-links'>
+          <div className='languages'>
+            {project.languages.map((language, index) => (
+              <span key={index} className="language">{language}</span>
+            ))}
+          </div>
+          <div id="code-design">
+            <Link text="Code" url={project.codeUrl} />
+            <Link text="Design" url={project.designUrl} />
+          </div>
         </div>
       </div>
 
@@ -48,10 +51,9 @@ import './Projects.css';
   function Link({text, url}) {
     return (
       url && (
-        <span id="link">
-          <img src='../../assets/link.svg'></img>
-          <a href={url}>{text}</a>
-        </span>
+        <a id="link" href={url}>
+          <span><LinkIcon/>{text}</span>
+        </a>
         )
     );
   }
