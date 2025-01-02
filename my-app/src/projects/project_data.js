@@ -13,6 +13,7 @@ const projects = [
         title: "Software Engineering Group Project",
         date: "SEP 2023 - JUN 2024",
         description: `University group project to develop an event-finding app for industry partner, Lots For Tots`,
+        detail: "Team Leader of 8 computer science students. Developed app free of charge, allowing parents to find nearby children's events. Integrated accessibility, offering visual comfort options and filtering of events by SEN and wheelchair access. Created interactive prototypes, and iteratively gathered requirements and user feedback to guide app design. Utilised Scrumban, and paired programming and code reviews to ensure code quality. Showcased work to academics, industry leaders and peers.",
         designUrl: "https://www.figma.com/design/pBlTcItDic1lt4CA2VA81k/Prototyping?t=Jc90sSWYw35fi01r-0",
         thumbnail: "assets/lots-for-tots/lots-for-tots.png",
         languages: ["Flutter", "Figma"]
@@ -21,6 +22,7 @@ const projects = [
         title: "Operating Systems and Concurrency",
         date: "OCT 2023 - JAN 2024",
         description: `University project to implement a process and I/O management simulation via the POSIX API in Linux`,
+        detail: "",
         thumbnail: "assets/nottingham.svg",
         languages: ["C"]
     },
