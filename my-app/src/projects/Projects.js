@@ -1,6 +1,7 @@
 import React from 'react';
 import projects from './project_data.js';
 import './Projects.css';
+import {ReactComponent as LinkIcon} from '../assets/link.svg';
 
   function Projects() {
     return (
@@ -49,7 +50,7 @@ import './Projects.css';
     return (
       url && (
         <span id="link">
-          <img src='../../assets/link.svg'></img>
+          <LinkIcon/>
           <a href={url}>{text}</a>
         </span>
         )
