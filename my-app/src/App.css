@@ -24,6 +24,11 @@
   display: flex;
   flex-direction: row;
   gap: 7.5%;
+
+  :hover svg {
+    fill: white;
+    transition: fill 0.3s ease;
+  }
 }
 
 #name {
