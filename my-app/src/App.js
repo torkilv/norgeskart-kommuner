@@ -2,6 +2,7 @@ import './App.css';
 import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home.js';
 import MapUK from './pages/MapUK.js';
+import NotFound from './pages/NotFound.js';
 
 function App() {
   return (
@@ -9,7 +10,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/uk-map" element={<MapUK/>}/>
-        <Route path="*" element={<Home/>} /> {/* Return to root for smstone0.github.io/#/{invalid} URLs */}
+        <Route path="/not-found" element={<NotFound />}/>
+        <Route path="*" element={<NotFound/>}/>
       </Routes>
     </Router>
   );
