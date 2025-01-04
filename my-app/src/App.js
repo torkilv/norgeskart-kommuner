@@ -9,6 +9,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/uk-map" element={<MapUK/>}/>
+        <Route path="*" element={<Home/>} /> {/* Return to root for smstone0.github.io/#/{invalid} URLs */}
       </Routes>
     </Router>
   );
