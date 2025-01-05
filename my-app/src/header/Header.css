@@ -1,4 +1,6 @@
 #Header {
+    /* background-color: #282c34; */
+    padding-top: 2%;
     margin-bottom: 10%;
     padding-right: 1%;
     font-size: medium;
@@ -23,6 +25,7 @@
     background-image: radial-gradient(#8EE8FF, #da70d6);
     color: transparent;
     background-clip: text;
+    margin: 0;
   }
 
   #name-link {
