@@ -26,6 +26,7 @@ import {ReactComponent as LinkIcon} from '../assets/link.svg';
         <div id="image-description">
           <a class="image-container" href={project.url}>
           <img src={project.thumbnail} alt={project.url}></img>
+          <div id="more-images">placeholder</div>
           </a>
           <div class="content">
             <p id="description">{project.description}</p>
