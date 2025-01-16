@@ -2,6 +2,7 @@ import React from 'react';
 import projects from './project_data.js';
 import './Projects.css';
 import {ReactComponent as LinkIcon} from '../assets/link.svg';
+import {ReactComponent as ArrowIcon} from '../assets/arrow-up-right.svg';
 
   function Projects() {
     return (
@@ -50,7 +51,8 @@ import {ReactComponent as LinkIcon} from '../assets/link.svg';
   }
 
   function MoreImages({images}) {
-    return images && images.length > 0 && <span id="more-images">+{images.length}</span>
+    return images && images.length > 0 && 
+    <span id="more-images">+{images.length}<ArrowIcon/></span>
   }
 
   function Link({text, url}) {
