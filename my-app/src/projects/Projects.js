@@ -26,7 +26,7 @@ import {ReactComponent as LinkIcon} from '../assets/link.svg';
         <div id="image-description">
           <a class="image-container" href={project.url}>
           <img src={project.thumbnail} alt={project.url}></img>
-          <div id="more-images">placeholder</div>
+          <MoreImages images={project.moreImages}></MoreImages>
           </a>
           <div class="content">
             <p id="description">{project.description}</p>
@@ -47,6 +47,10 @@ import {ReactComponent as LinkIcon} from '../assets/link.svg';
       </div>
 
     );
+  }
+
+  function MoreImages({images}) {
+    return images && images.length > 0 && <span id="more-images">+{images.length}</span>
   }
 
   function Link({text, url}) {

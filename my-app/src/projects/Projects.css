@@ -81,6 +81,11 @@
     color: #8EE8FF;
     border-radius: 15px;
     padding: 5px 15px;
+    font-weight: 500;
+}
+
+#more-images:hover {
+    opacity: 0.7;
 }
 
 .content {
