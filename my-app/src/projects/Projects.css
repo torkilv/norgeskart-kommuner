@@ -44,7 +44,7 @@
     margin-top: 0;
     margin-bottom: 10px;
 }
-  
+
 #date {
     font-size: small;
     color: #D9D9D9;
@@ -61,13 +61,13 @@
     overflow: hidden;
     position: relative;
 }
-  
+
   .image-container img {
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
 }
-  
+
   /* .image-container img:hover {
     transform: scale(1.1);
 } */
@@ -86,10 +86,27 @@
     align-items: center;
     padding: 5px 10px;
     gap: 3px;
+    transition: opacity 0.1s ease;
 }
 
 #more-images:hover {
     opacity: 0.7;
+}
+
+#modal {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+#modal img {
+    max-width: 90%;
+    max-height: 90%;
+    margin: 10px;
 }
 
 .content {
@@ -159,7 +176,7 @@
     #title-date {
         justify-content: space-between;
         display: flex;
-        align-items: center;       
+        align-items: center;
     }
 
     .content {
