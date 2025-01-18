@@ -101,11 +101,21 @@
     left: 0;
     z-index: 1000;
     background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#modal img {
-    max-width: 90%;
-    max-height: 90%;
+#modal-content {
+    border-radius: 15px;
+    background-color: rgba(25, 25, 25, 1);
+    display: flex;
+    height: 75%;
+}
+
+#modal-content img {
+    max-height: 100%;
+    max-width: 100%;
     margin: 10px;
 }
 

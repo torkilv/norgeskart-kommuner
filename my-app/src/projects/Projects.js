@@ -69,11 +69,13 @@ import {ReactComponent as ArrowIcon} from '../assets/arrow-up-right.svg';
       }
     };
     return <div id="modal" onClick={handleClickOutside}>
+      <div id="modal-content">
         {images.map((image, index) => (
-        <span id="modal-content">
+        <span>
         <img key={index} src={image} alt={`Image ${index + 1}`}></img>
         </span>
         ))}
+        </div>
     </div>
   }
 
