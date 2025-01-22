@@ -1,5 +1,5 @@
 import React from 'react';
-import {ReactComponent as Map} from '../assets/uk.svg';
+import {ReactComponent as Map} from '../assets/MapChart_Map.svg';
 
 function MapUK() {
     return (
