@@ -34,13 +34,15 @@ function CountyCard({countyName, position}) {
             left: `${x}px`,
             top: `${y}px`,
         }}>
-            <h2>{countyName}</h2>
-            <p>Lived here</p>
-            <p>Stayed here</p>
-            <p>Visited here</p>
-            <p>Stopped here</p>
-            <p>Passed here</p>
-            <p>Never been here</p>
+            <h2 id="county-name">{countyName}</h2>
+            <div id='card-options'>
+                <p id='lived'>Lived here</p>
+                <p id='stayed'>Stayed here</p>
+                <p id='visited'>Visited here</p>
+                <p id='stopped'>Stopped here</p>
+                <p id='passed'>Passed here</p>
+                <p id='never-been'>Never been here</p>
+            </div>
         </div>
     )
 }
