@@ -63,6 +63,7 @@ import {ReactComponent as ArrowIcon} from '../assets/arrow-up-right.svg';
   }
 
   function Modal({images, onClose}) {
+    let index = 0;
     const handleClickOutside = (e) => {
       if (e.target.id === 'modal') {
         onClose();
@@ -70,11 +71,7 @@ import {ReactComponent as ArrowIcon} from '../assets/arrow-up-right.svg';
     };
     return <div id="modal" onClick={handleClickOutside}>
       <div id="modal-content">
-        {images.map((image, index) => (
-        <span>
-        <img key={index} src={image} alt={`Image ${index + 1}`}></img>
-        </span>
-        ))}
+        <img src={images[index]} alt={`Image ${index + 1}`}></img>
         </div>
     </div>
   }

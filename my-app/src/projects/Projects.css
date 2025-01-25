@@ -91,6 +91,7 @@
 
 #more-images:hover {
     opacity: 0.7;
+    cursor: pointer;
 }
 
 #modal {
@@ -111,6 +112,7 @@
     background-color: rgba(25, 25, 25, 1);
     display: flex;
     height: 75%;
+    width: 80%;
 }
 
 #modal-content img {
