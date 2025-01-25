@@ -70,9 +70,16 @@ import {ReactComponent as ArrowIcon} from '../assets/arrow-up-right.svg';
       }
     };
     return <div id="modal" onClick={handleClickOutside}>
-      <div id="modal-content">
-        <img src={images[index]} alt={`Image ${index + 1}`}></img>
+      <div id="modal-container">
+        <div className="modal-column">
+          <div id="title-exit">
+            <h2>More images</h2>
+          </div>
+          <div id="modal-image-container">
+            <img src={images[index]} alt={`Image ${index + 1}`}></img>
+          </div>
         </div>
+      </div>
     </div>
   }
 
