@@ -3,6 +3,7 @@ import projects from './project_data.js';
 import './Projects.css';
 import {ReactComponent as LinkIcon} from '../assets/link.svg';
 import {ReactComponent as ArrowIcon} from '../assets/arrow-up-right.svg';
+import {ReactComponent as CloseIcon} from '../assets/close.svg';
 
   function Projects() {
     return (
@@ -74,6 +75,7 @@ import {ReactComponent as ArrowIcon} from '../assets/arrow-up-right.svg';
         <div className="modal-column">
           <div id="title-exit">
             <h2>More images</h2>
+            <CloseIcon id="exit" onClick={onClose}/>
           </div>
           <div id="modal-image-container">
             <img src={images[index]} alt={`Image ${index + 1}`}></img>

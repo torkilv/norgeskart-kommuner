@@ -139,6 +139,12 @@
     justify-content: space-between;
     margin-left: 10px;
     margin-right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+#exit {
+    cursor: pointer;
 }
 
 .content {
