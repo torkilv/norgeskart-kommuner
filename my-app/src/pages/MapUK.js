@@ -35,6 +35,12 @@ function CountyCard({countyName, position}) {
             top: `${y}px`,
         }}>
             <h2>{countyName}</h2>
+            <p>Lived here</p>
+            <p>Stayed here</p>
+            <p>Visited here</p>
+            <p>Stopped here</p>
+            <p>Passed here</p>
+            <p>Never been here</p>
         </div>
     )
 }
