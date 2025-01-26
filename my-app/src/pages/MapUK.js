@@ -25,7 +25,22 @@ function MapUK() {
             const {clientX: x, clientY: y} = e;
             setSelectedCounty(countyName);
             setSelectedCountyElement(target);
-            setCardPosition({x, y});
+
+            const cardWidth = 225; // prevent card from going off screen
+            const cardHeight = 330;
+            const viewportWidth = window.innerWidth;
+            const viewportHeight = window.innerHeight;
+            let adjustedX = x;
+            let adjustedY = y;
+
+            if (x + cardWidth > viewportWidth) {
+                adjustedX = viewportWidth - cardWidth;
+            }
+            if (y + cardHeight > viewportHeight) {
+                adjustedY = viewportHeight - cardHeight;
+            }
+
+            setCardPosition({x: adjustedX, y: adjustedY});
         } else {
             setSelectedCounty(null);
             setSelectedCountyElement(null);
