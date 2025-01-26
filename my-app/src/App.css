@@ -45,6 +45,7 @@
   box-sizing: border-box;
   text-align: center;
   display: block;
+  cursor: pointer;
 }
 
 #lived {background-color: #FF7E7E;}
