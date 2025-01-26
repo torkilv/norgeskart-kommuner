@@ -24,38 +24,38 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-#card-options p {
-  font-size: 20px;
-  margin: 0;
-  padding: 10px 35px;
-  box-sizing: border-box;
+  width: 225px;
 }
 
 #county-name {
-  /* word wrap */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  text-align: center;
+  margin: 10px 0;
 }
 
-#lived {
-  background-color: #FF7E7E;
+#card-options {
+  width: 100%;
 }
 
-#stayed {
-  background-color: #FFB57E;
+#card-options p {
+  font-size: 18px;
+  margin: 0;
+  padding: 10px 0;
+  box-sizing: border-box;
+  text-align: center;
+  display: block;
 }
 
-#visited {
-  background-color: #FFE57E;
-}
+#lived {background-color: #FF7E7E;}
 
-#stopped {
-  background-color: #A8FFBE;
-}
+#stayed {background-color: #FFB57E;}
 
-#passed {
-  background-color: #88AEFF;
-}
+#visited {background-color: #FFE57E;}
+
+#stopped {background-color: #A8FFBE;}
+
+#passed {background-color: #88AEFF;}
 
 #map-container {
   display: flex;

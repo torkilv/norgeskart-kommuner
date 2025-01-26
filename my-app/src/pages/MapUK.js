@@ -34,7 +34,7 @@ function CountyCard({countyName, position}) {
             left: `${x}px`,
             top: `${y}px`,
         }}>
-            <h2 id="county-name">{countyName}</h2>
+            <h3 id="county-name">{countyName}</h3>
             <div id='card-options'>
                 <p id='lived'>Lived here</p>
                 <p id='stayed'>Stayed here</p>
