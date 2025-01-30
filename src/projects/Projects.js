@@ -66,12 +66,21 @@ import {ReactComponent as LeftArrow} from '../assets/left-arrow.svg';
   }
 
   function Modal({images, onClose, project}) {
-    let index = 0;
+    const [index, setIndex] = useState(0);
+
     const handleClickOutside = (e) => {
       if (e.target.id === 'modal') {
         onClose();
       }
     };
+
+    const indexUpdate = (e) => {
+      if(e.target.id === 'previous') {
+        setIndex(index === 0 ? images.length - 1 : index - 1);
+      } else if (e.target.id === 'next') {
+        setIndex(index === images.length - 1 ? 0 : index + 1);
+      }
+    }
     return <div id="modal" onClick={handleClickOutside}>
       <div id="modal-container">
         <div className="modal-column">
@@ -84,10 +93,10 @@ import {ReactComponent as LeftArrow} from '../assets/left-arrow.svg';
               <img src={images[index]} alt={`Image ${index + 1}`}></img>
             </div>
             <div id="navigation">
-              <p id="image-count">1 of {project.moreImages.length}</p>
+              <p id="image-count">{index+1} of {project.moreImages.length}</p>
               <div id="navigation-buttons">
-                <span><LeftArrow/>Previous</span>
-                <span>Next<RightArrow/></span>
+                <span className="navigation-button" id="previous" onClick={indexUpdate}><LeftArrow/>Previous</span>
+                <span className="navigation-button" id="next" onClick={indexUpdate}>Next<RightArrow/></span>
               </div>
             </div>
           </div>

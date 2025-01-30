@@ -147,19 +147,27 @@
     flex-direction: column;
     align-self: end;
     margin-left: auto;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     margin-right: 20px;
 }
 
 #navigation-buttons {
     display: flex;
-    gap: 25px;
+    gap: 15px;
+}
 
-    span {
-        display: flex;
-        align-items: center;
-        gap: 5px;
-    }
+.navigation-button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.navigation-button:hover {
+    background-color: rgb(37, 36, 36);
+    transition: background-color 0.2s ease;
+    cursor: pointer;      
 }
 
 #image-count {
