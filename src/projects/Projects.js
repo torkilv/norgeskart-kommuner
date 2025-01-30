@@ -4,6 +4,8 @@ import './Projects.css';
 import {ReactComponent as LinkIcon} from '../assets/link.svg';
 import {ReactComponent as ArrowIcon} from '../assets/arrow-up-right.svg';
 import {ReactComponent as CloseIcon} from '../assets/close.svg';
+import {ReactComponent as RightArrow} from '../assets/right-arrow.svg';
+import {ReactComponent as LeftArrow} from '../assets/left-arrow.svg';
 
   function Projects() {
     return (
@@ -27,7 +29,7 @@ import {ReactComponent as CloseIcon} from '../assets/close.svg';
 
     return (
       <div class="project">
-        {modalOpen && <Modal images={project.moreImages} onClose={toggleModal}/>}
+        {modalOpen && <Modal images={project.moreImages} onClose={toggleModal} project={project}/>}
         <div id="title-date">
           <h3 id="title">{project.title}</h3>
           <p id="date">{project.date}</p>
@@ -63,7 +65,7 @@ import {ReactComponent as CloseIcon} from '../assets/close.svg';
     <span id="more-images" onClick={toggleModal}>+{images.length}<ArrowIcon/></span>
   }
 
-  function Modal({images, onClose}) {
+  function Modal({images, onClose, project}) {
     let index = 0;
     const handleClickOutside = (e) => {
       if (e.target.id === 'modal') {
@@ -77,8 +79,17 @@ import {ReactComponent as CloseIcon} from '../assets/close.svg';
             <h2>More images</h2>
             <CloseIcon id="exit" onClick={onClose}/>
           </div>
-          <div id="modal-image-container">
-            <img src={images[index]} alt={`Image ${index + 1}`}></img>
+          <div className="modal-row">
+            <div id="modal-image-container">
+              <img src={images[index]} alt={`Image ${index + 1}`}></img>
+            </div>
+            <div id="navigation">
+              <p id="image-count">1 of {project.moreImages.length}</p>
+              <div id="navigation-buttons">
+                <span className='navigation-button'><LeftArrow/>Previous</span>
+                <span className='navigation-button'>Next<RightArrow/></span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

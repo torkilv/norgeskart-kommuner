@@ -135,6 +135,34 @@
     height: 100%;
 }
 
+.modal-row {
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    display: flex;
+}
+
+#navigation {
+    display: flex;
+    align-items: end;
+}
+
+#navigation-buttons {
+    display: flex;
+    gap: 25px;
+}
+
+#image-count {
+    display: flex;
+    align-self: end;
+}
+
+.navigation-button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
 #title-exit {
     justify-content: space-between;
     margin-left: 10px;
