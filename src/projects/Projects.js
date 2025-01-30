@@ -76,7 +76,7 @@ import {ReactComponent as LeftArrow} from '../assets/left-arrow.svg';
       <div id="modal-container">
         <div className="modal-column">
           <div id="title-exit">
-            <h2>More images</h2>
+            <h2>More images from {project.title}</h2>
             <CloseIcon id="exit" onClick={onClose}/>
           </div>
           <div className="modal-row">
@@ -86,8 +86,8 @@ import {ReactComponent as LeftArrow} from '../assets/left-arrow.svg';
             <div id="navigation">
               <p id="image-count">1 of {project.moreImages.length}</p>
               <div id="navigation-buttons">
-                <span className='navigation-button'><LeftArrow/>Previous</span>
-                <span className='navigation-button'>Next<RightArrow/></span>
+                <span><LeftArrow/>Previous</span>
+                <span>Next<RightArrow/></span>
               </div>
             </div>
           </div>
