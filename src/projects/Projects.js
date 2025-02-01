@@ -24,7 +24,8 @@ import {ReactComponent as LeftArrow} from '../assets/left-arrow.svg';
     const [modalOpen, setModalOpen] = useState(false);
 
     const toggleModal = () => {
-      setModalOpen(!modalOpen)
+      modalOpen ? document.body.classList.remove('no-scroll') : document.body.classList.add('no-scroll');
+      setModalOpen(!modalOpen);
     }
 
     return (
