@@ -47,7 +47,7 @@ function MapUK() {
             let adjustedY = y;
 
             if (x + cardWidth > viewportWidth) {
-                adjustedX = viewportWidth - cardWidth;
+                adjustedX = viewportWidth - cardWidth - 10;
             }
             if (y + cardHeight > viewportHeight) {
                 adjustedY = viewportHeight - cardHeight;
