@@ -23,12 +23,12 @@ function MapUK() {
 
     const getColorByLevel = (level) => {
         switch(level) {
-            case 5: return '#FF7E7E'; // lived
-            case 4: return '#FFB57E'; // stayed
-            case 3: return '#FFE57E'; // visited
-            case 2: return '#A8FFBE'; // stopped
-            case 1: return '#88AEFF'; // passed
-            default: return 'white'; // never been
+            case 5: return '#FF7E7E'; // Lived
+            case 4: return '#FFB57E'; // Stayed
+            case 3: return '#FFE57E'; // Visited
+            case 2: return '#A8FFBE'; // Stopped
+            case 1: return '#88AEFF'; // Passed
+            default: return 'white'; // Never been
         }
     };
 
@@ -66,10 +66,20 @@ function MapUK() {
         setSelectedCounty(null); // Close card upon selection
     }
 
+    const reset = () => {
+        const resetScores = {...countyScores};
+        Object.keys(resetScores).forEach(county => {
+            resetScores[county] = 0;
+        });
+        setCountyScores(resetScores); // Trigger recolour to white
+        localStorage.setItem('countyScores', JSON.stringify(resetScores)); // Save to localStorage
+    }
+
     return (
         <div id="MapUK">
             {selectedCounty && <CountyCard countyName={selectedCounty} position={cardPosition} levelClick={levelClick}/>}
             <div id="map-container">
+                <button id="reset" onClick={reset}>Reset</button>
                 <Map id="map" onClick={countyClick}/>
             </div>
         </div>
