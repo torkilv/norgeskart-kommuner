@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {ReactComponent as Map} from '../assets/MapChart_Map.svg';
+import {ReactComponent as GithubIcon} from '../assets/github-mark-white.svg';
 
 function MapUK() {
     const [selectedCounty, setSelectedCounty] = useState(null);
@@ -79,7 +80,10 @@ function MapUK() {
         <div id="MapUK">
             {selectedCounty && <CountyCard countyName={selectedCounty} position={cardPosition} levelClick={levelClick}/>}
             <div id="map-container">
-                <button id="reset" onClick={reset}>Reset</button>
+                <span id="buttons">
+                    <button id="reset" onClick={reset}>Reset</button>
+                    <a href="https://github.com/smstone0/smstone0.github.io"><GithubIcon/></a>
+                </span>
                 <Map id="map" onClick={countyClick}/>
             </div>
         </div>
