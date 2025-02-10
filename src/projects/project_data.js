@@ -17,7 +17,7 @@ const projects = [
         detail: "Team Leader of 8 computer science students. Developed app free of charge, allowing parents to find nearby children's events. Integrated accessibility, offering visual comfort options and filtering of events by SEN and wheelchair access. Created interactive prototypes, and iteratively gathered requirements and user feedback to guide app design. Utilised Scrumban, and paired programming and code reviews to ensure code quality. Showcased work to academics, industry leaders and peers.",
         designUrl: "https://www.figma.com/design/pBlTcItDic1lt4CA2VA81k/Prototyping?t=Jc90sSWYw35fi01r-0",
         thumbnail: "assets/lots-for-tots/lots-for-tots.png",
-        moreImages: ['assets/lots-for-tots/login.jpeg', 'assets/lots-for-tots/event-page.jpeg', 'assets/lots-for-tots/forgot-password.jpeg', 'assets/lots-for-tots/settings.jpeg', 'assets/lots-for-tots/sign-up.jpeg', 'assets/lots-for-tots/subscribed.jpeg', 'assets/lots-for-tots/map.jpeg', 'assets/lots-for-tots/kanban.jpeg', 'assets/lots-for-tots/prototypes.jpeg'],
+        moreImages: ['assets/lots-for-tots/login.jpeg', 'assets/lots-for-tots/event-page.jpeg', 'assets/lots-for-tots/forgot-password.jpeg', 'assets/lots-for-tots/settings.jpeg', 'assets/lots-for-tots/sign-up.jpeg', 'assets/lots-for-tots/subscribed.jpeg', 'assets/lots-for-tots/map.jpeg', 'assets/lots-for-tots/prototypes.png'],
         languages: ["Flutter", "Figma"]
     },
     {
