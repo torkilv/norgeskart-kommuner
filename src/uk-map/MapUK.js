@@ -1,20 +1,34 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {ReactComponent as Map} from '../assets/MapChart_Map.svg';
 
 function MapUK() {
     const [selectedCounty, setSelectedCounty] = useState(null);
-    const [selectedCountyElement, setSelectedCountyElement] = useState(null);
     const [cardPosition, setCardPosition] = useState({x: 0, y: 0});
-    const [countyScores, setCountyScores] = useState({});
+    const [countyScores, setCountyScores] = useState(() => {
+        const savedScores = localStorage.getItem('countyScores');
+        return savedScores ? JSON.parse(savedScores) : {};
+    });
+
+    useEffect(() => { // Upon a state update, colour map and calculate total level
+        Object.keys(countyScores).forEach(county => {
+            const element = document.querySelector(`[name="${county}"]`);
+            if (element) {
+                element.style.fill = getColorByLevel(countyScores[county]);
+            }
+        });
+        const totalLevel = Object.values(countyScores).reduce((acc, curr) => acc + curr, 0);
+        const levelElement = document.getElementById('level');
+        levelElement.textContent = `UK Level ${totalLevel}`;
+    }, [countyScores]);
 
     const getColorByLevel = (level) => {
         switch(level) {
-            case 5: return '#FF7E7E'; // lived
-            case 4: return '#FFB57E'; // stayed
-            case 3: return '#FFE57E'; // visited
-            case 2: return '#A8FFBE'; // stopped
-            case 1: return '#88AEFF'; // passed
-            default: return 'white'; // never been
+            case 5: return '#FF7E7E'; // Lived
+            case 4: return '#FFB57E'; // Stayed
+            case 3: return '#FFE57E'; // Visited
+            case 2: return '#A8FFBE'; // Stopped
+            case 1: return '#88AEFF'; // Passed
+            default: return 'white'; // Never been
         }
     };
 
@@ -24,9 +38,8 @@ function MapUK() {
             const countyName = target.getAttribute("name");
             const {clientX: x, clientY: y} = e;
             setSelectedCounty(countyName);
-            setSelectedCountyElement(target);
 
-            const cardWidth = 225; // prevent card from going off screen
+            const cardWidth = 225; // Prevent card from going off screen
             const cardHeight = 330;
             const viewportWidth = window.innerWidth;
             const viewportHeight = window.innerHeight;
@@ -34,7 +47,7 @@ function MapUK() {
             let adjustedY = y;
 
             if (x + cardWidth > viewportWidth) {
-                adjustedX = viewportWidth - cardWidth;
+                adjustedX = viewportWidth - cardWidth - 10;
             }
             if (y + cardHeight > viewportHeight) {
                 adjustedY = viewportHeight - cardHeight;
@@ -43,26 +56,30 @@ function MapUK() {
             setCardPosition({x: adjustedX, y: adjustedY});
         } else {
             setSelectedCounty(null);
-            setSelectedCountyElement(null);
         }
     }
 
     const levelClick = (level) => {
-        selectedCountyElement.style.fill = getColorByLevel(level);
-
         const updatedScores = {...countyScores, [selectedCounty]: level};
         setCountyScores(updatedScores);
-        const totalLevel = Object.values(updatedScores).reduce((acc, curr) => acc + curr, 0);
-        const levelElement = document.getElementById('level');
-        levelElement.textContent = `UK Level ${totalLevel}`;
-        
-        setSelectedCounty(null); //close card upon selection
+        localStorage.setItem('countyScores', JSON.stringify(updatedScores)); // Save to localStorage
+        setSelectedCounty(null); // Close card upon selection
+    }
+
+    const reset = () => {
+        const resetScores = {...countyScores};
+        Object.keys(resetScores).forEach(county => {
+            resetScores[county] = 0;
+        });
+        setCountyScores(resetScores); // Trigger recolour to white
+        localStorage.setItem('countyScores', JSON.stringify(resetScores)); // Save to localStorage
     }
 
     return (
         <div id="MapUK">
             {selectedCounty && <CountyCard countyName={selectedCounty} position={cardPosition} levelClick={levelClick}/>}
             <div id="map-container">
+                <button id="reset" onClick={reset}>Reset</button>
                 <Map id="map" onClick={countyClick}/>
             </div>
         </div>

@@ -1,5 +1,17 @@
 const projects = [
     {
+        title: "UK Travel Visualiser",
+        date: "PRESENT",
+        description: "UK county map with colourable regions to visualise user's travel",
+        detail: `Allows the user to click counties and select whether they have lived, stayed, visited, stopped, passed, or never been there. The county is filled with the corresponding colour on selection and their UK 'level' updated.
+
+Concept inspired by https://lab.magiconch.com/china-ex/ and https://tenpages.github.io/us-level/eu.html.`,
+        pageUrl: "smstone0.github.io/#/uk-map",
+        codeUrl: "https://github.com/smstone0/smstone0.github.io",
+        thumbnail: "assets/MapChart_Map.svg",
+        languages: ["React", "JavaScript", "HTML", "CSS"],
+    },
+    {
         title: "Caloric",
         date: "JUN 2023 - PRESENT",
         description: `Cross-platform calorie counting app designed for minimalism and simplicity`,

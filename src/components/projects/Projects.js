@@ -50,6 +50,7 @@ import Modal from '../modal/Modal.js';
             ))}
           </div>
           <div id="code-design">
+            <Link text="Page" url={project.pageUrl}/>
             <Link text="Code" url={project.codeUrl} />
             <Link text="Design" url={project.designUrl} />
           </div>
