@@ -1,6 +1,6 @@
 import React from 'react';
-import {ReactComponent as GithubIcon} from '../assets/github-mark-white.svg';
-import {ReactComponent as LinkedInIcon} from '../assets/linkedin.svg';
+import {ReactComponent as GithubIcon} from '../../assets/github-mark-white.svg';
+import {ReactComponent as LinkedInIcon} from '../../assets/linkedin.svg';
 import './Header.css';
 import {Link} from 'react-router-dom';
 
