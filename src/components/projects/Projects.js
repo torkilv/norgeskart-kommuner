@@ -1,7 +1,9 @@
-import React from 'react';
-import projects from './project_data.js';
+import React, {useState} from 'react';
+import projects from '../../data/project_data.js';
 import './Projects.css';
-import {ReactComponent as LinkIcon} from '../assets/link.svg';
+import {ReactComponent as LinkIcon} from '../../assets/link.svg';
+import {ReactComponent as ArrowIcon} from '../../assets/arrow-up-right.svg';
+import Modal from '../modal/Modal.js';
 
   function Projects() {
     return (
@@ -17,8 +19,16 @@ import {ReactComponent as LinkIcon} from '../assets/link.svg';
   }
 
   function Project({project}) {
+    const [modalOpen, setModalOpen] = useState(false);
+
+    const toggleModal = () => {
+      modalOpen ? document.body.classList.remove('no-scroll') : document.body.classList.add('no-scroll');
+      setModalOpen(!modalOpen);
+    }
+
     return (
       <div class="project">
+        {modalOpen && <Modal images={project.moreImages} onClose={toggleModal} project={project}/>}
         <div id="title-date">
           <h3 id="title">{project.title}</h3>
           <p id="date">{project.date}</p>
@@ -26,6 +36,7 @@ import {ReactComponent as LinkIcon} from '../assets/link.svg';
         <div id="image-description">
           <a class="image-container" href={project.url}>
           <img src={project.thumbnail} alt={project.url}></img>
+          <MoreImages images={project.moreImages} toggleModal={toggleModal}></MoreImages>
           </a>
           <div class="content">
             <p id="description">{project.description}</p>
@@ -47,6 +58,11 @@ import {ReactComponent as LinkIcon} from '../assets/link.svg';
       </div>
 
     );
+  }
+
+  function MoreImages({images, toggleModal}) {
+    return images && images.length > 0 && 
+    <span id="more-images" onClick={toggleModal}>+{images.length}<ArrowIcon/></span>
   }
 
   function Link({text, url}) {

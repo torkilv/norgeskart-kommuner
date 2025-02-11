@@ -19,7 +19,8 @@ Concept inspired by https://lab.magiconch.com/china-ex/ and https://tenpages.git
         designUrl: "https://www.figma.com/design/ojnG7Z2LYuzCuDM0TMUUiA/Caloric?node-id=0-1&node-type=canvas&t=lJdGKqTurMDbI7DR-0",
         codeUrl: "https://github.com/smstone0/Caloric",
         thumbnail: "assets/caloric/caloric.png",
-        languages: ["Flutter", "SQL (SQLite)", "Figma"]
+        moreImages: [],
+        languages: ["Flutter", "SQL", "Figma"]
     },
     {
         title: "Software Engineering Group Project",
@@ -28,6 +29,7 @@ Concept inspired by https://lab.magiconch.com/china-ex/ and https://tenpages.git
         detail: "Team Leader of 8 computer science students. Developed app free of charge, allowing parents to find nearby children's events. Integrated accessibility, offering visual comfort options and filtering of events by SEN and wheelchair access. Created interactive prototypes, and iteratively gathered requirements and user feedback to guide app design. Utilised Scrumban, and paired programming and code reviews to ensure code quality. Showcased work to academics, industry leaders and peers.",
         designUrl: "https://www.figma.com/design/pBlTcItDic1lt4CA2VA81k/Prototyping?t=Jc90sSWYw35fi01r-0",
         thumbnail: "assets/lots-for-tots/lots-for-tots.png",
+        moreImages: ['assets/lots-for-tots/login.jpeg', 'assets/lots-for-tots/event-page.jpeg', 'assets/lots-for-tots/forgot-password.jpeg', 'assets/lots-for-tots/settings.jpeg', 'assets/lots-for-tots/sign-up.jpeg', 'assets/lots-for-tots/subscribed.jpeg', 'assets/lots-for-tots/map.png', 'assets/lots-for-tots/prototypes.png'],
         languages: ["Flutter", "Figma"]
     },
     {
@@ -36,7 +38,8 @@ Concept inspired by https://lab.magiconch.com/china-ex/ and https://tenpages.git
         description: `University project to implement a process and I/O management simulation via the POSIX API in Linux`,
         detail: "",
         thumbnail: "assets/nottingham.svg",
-        languages: ["C"]
+        languages: ["C"],
+        moreImages: ['assets/osc/output.png']
     },
 ]
 

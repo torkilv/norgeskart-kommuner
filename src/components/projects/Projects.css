@@ -44,7 +44,7 @@
     margin-top: 0;
     margin-bottom: 10px;
 }
-  
+
 #date {
     font-size: small;
     color: #D9D9D9;
@@ -59,16 +59,35 @@
     align-items: center;
     border-radius: 15px;
     overflow: hidden;
+    position: relative;
 }
-  
+
   .image-container img {
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
 }
-  
-  .image-container img:hover {
-    transform: scale(1.1);
+
+#more-images {
+    background-color: black;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    opacity: 0.6;
+    color: #8EE8FF;
+    border-radius: 15px;
+    padding: 5px 15px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    gap: 3px;
+    transition: opacity 0.1s ease;
+}
+
+#more-images:hover {
+    opacity: 0.7;
+    cursor: pointer;
 }
 
 .content {
@@ -138,7 +157,7 @@
     #title-date {
         justify-content: space-between;
         display: flex;
-        align-items: center;       
+        align-items: center;
     }
 
     .content {
