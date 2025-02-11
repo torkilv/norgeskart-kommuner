@@ -26,7 +26,8 @@ const projects = [
         description: `University project to implement a process and I/O management simulation via the POSIX API in Linux`,
         detail: "",
         thumbnail: "assets/nottingham.svg",
-        languages: ["C"]
+        languages: ["C"],
+        moreImages: ['assets/osc/output.png']
     },
 ]
 
