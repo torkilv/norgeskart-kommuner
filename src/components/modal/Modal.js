@@ -22,24 +22,22 @@ const indexUpdate = (e) => {
 }
 return <div id="modal" onClick={handleClickOutside}>
     <div id="modal-container">
-    <div className="modal-column">
-        <div id="title-exit">
-        <h2>More images from {project.title}</h2>
-        <CloseIcon id="exit" onClick={onClose}/>
+        <div id="modal-header">
+            <h2>More images from {project.title}</h2>
+            <CloseIcon id="exit" onClick={onClose}/>
         </div>
-        <div className="modal-row">
-        <div id="modal-image-container">
-            <img src={images[index]} alt={`Image ${index + 1}`}></img>
-        </div>
-        <div id="navigation">
-            <p id="image-count">{index+1} of {project.moreImages.length}</p>
-            <div id="navigation-buttons">
-            <span className="navigation-button" id="previous" onClick={indexUpdate}><LeftArrow/>Previous</span>
-            <span className="navigation-button" id="next" onClick={indexUpdate}>Next<RightArrow/></span>
+        <div className="modal-content">
+            <div id="modal-image-container">
+                <img src={images[index]} alt={`Image ${index + 1}`}></img>
+            </div>
+            <div id="navigation">
+                <p id="image-count">{index+1} of {project.moreImages.length}</p>
+                <div id="navigation-buttons">
+                    <span className="navigation-button" id="previous" onClick={indexUpdate}><LeftArrow/>Previous</span>
+                    <span className="navigation-button" id="next" onClick={indexUpdate}>Next<RightArrow/></span>
+                </div>
             </div>
         </div>
-        </div>
-    </div>
     </div>
 </div>
 }
