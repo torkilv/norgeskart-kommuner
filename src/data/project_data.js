@@ -1,7 +1,7 @@
 const projects = [
     {
         title: "UK Travel Visualiser",
-        date: "2025",
+        date: "2025 - PRESENT",
         description: `An interactive map to visualise travel within the UK. Click areas and select whether you have lived, stayed, visited, stopped, passed, or never been there. The area is filled with the corresponding colour and the UK 'level' is updated.
 
 Concept inspired by https://lab.magiconch.com/china-ex/ and https://tenpages.github.io/us-level/eu.html.`,
