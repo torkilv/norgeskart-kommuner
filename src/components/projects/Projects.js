@@ -40,7 +40,6 @@ import Modal from '../modal/Modal.js';
           </a>
           <div class="content">
             <p id="description">{project.description}</p>
-            <p id="description-body">{project.detail}</p>
           </div>
         </div>
         <div className='languages-and-links'>

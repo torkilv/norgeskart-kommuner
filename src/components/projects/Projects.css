@@ -95,11 +95,6 @@
 }
 
 #description {
-    font-weight:500;
-    padding-top: 2.5%;
-}
-
-#description-body {
     color: #D9D9D9;
 }
 
@@ -149,11 +144,6 @@
         margin-bottom: 0;
     }
 
-    #description {
-        padding-top: 0;
-        margin-top: 0;
-    }
-
     #title-date {
         justify-content: space-between;
         display: flex;
@@ -173,9 +163,5 @@
  @media (min-width: 1400px) {
     .content {
         margin-right: 10%;
-    }
-
-    #description {
-        padding-top: 2.5%;
     }
  }
