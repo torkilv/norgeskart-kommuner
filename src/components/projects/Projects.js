@@ -4,6 +4,7 @@ import './Projects.css';
 import {ReactComponent as LinkIcon} from '../../assets/link.svg';
 import {ReactComponent as ArrowIcon} from '../../assets/arrow-up-right.svg';
 import Modal from '../modal/Modal.js';
+import languageIcons from '../language/languageIcons.js';
 
   function Projects() {
     return (
@@ -32,11 +33,16 @@ import Modal from '../modal/Modal.js';
         <div id="header">
           <h3 id="title">{project.title}</h3>
           <div id="languages-date">
-            <div className='languages'>
-              {project.languages.map((language, index) => (
-                <span key={index} className="language">{language}</span>
-              ))}
-            </div>
+          <div className="languages">
+              {project.languages.map((language, index) => {
+                const LanguageIcon = languageIcons[language];
+                return (
+                  <span key={index} className="language">
+                      {LanguageIcon ? <LanguageIcon/> : language}
+                  </span>
+                );
+            })}
+          </div>
             <p id="separator">|</p>
             <p id="date">{project.date}</p>
           </div>
