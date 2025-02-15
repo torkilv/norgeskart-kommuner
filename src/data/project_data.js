@@ -34,9 +34,9 @@ We created interactive prototypes and iteratively gathered requirements and user
     {
         title: "Operating Systems and Concurrency",
         date: "2023 - 2024",
-        description: `Developed a multi-threaded process simulator in C using the POSIX API on Linux, incorporating key operating system principles such as process scheduling, concurrency control, and resource management. The simulator generated and managed processes using a process table, priority-based scheduling, and linked-list-based queues for ready, I/O, and terminated processes. It supported both preemptive and non-preemptive scheduling, with processes running in a round-robin or first-come, first-served fashion depending on priority.
+        description: `Developed a multi-threaded process simulator in C using the POSIX API on Linux, incorporating key operating system principles such as process scheduling, concurrency control, and resource management. The simulator manages process creation, execution, and termination using a process table, priority-based scheduling, and linked-list-based queues for ready, I/O, and terminated processes. It supports both preemptive and non-preemptive scheduling, with processes running in a round-robin or FCFS fashion depending on priority. Semaphores and mutexes are used for synchronisation.
 
-To simulate real-world execution, the system included an I/O daemon to handle blocked processes, a booster daemon to prevent starvation, and a load balancer to distribute workloads across multiple CPUs. I achieved 96%, 12.6% higher than the average score among students who completed all parts of the coursework.`,
+To simulate real-world execution, the system includes an I/O daemon to handle blocked processes, a booster daemon to prevent starvation, and a load balancer to distribute workloads across multiple CPUs. I achieved 96%, 12.6% higher than the average score among students who completed all coursework components.`,
         thumbnail: "assets/nottingham.svg",
         languages: ["C"],
         moreImages: ['assets/osc/architecture.png', 'assets/osc/output.png']
