@@ -13,7 +13,7 @@ Concept inspired by https://lab.magiconch.com/china-ex/ and https://tenpages.git
     {
         title: "Caloric",
         date: "2023 - PRESENT",
-        description: `Cross-platform calorie counting app designed for minimalism and simplicity. Began as a personal project over the summer of 2023 to teach myself mobile development and interface design. Provides a beginner-friendly method to track nutrition compared with other apps by focusing on the essentials, eliminating descriptions such as macros and meal times. Currently in progress with plans to complete by the end of 2025.`,
+        description: `A cross-platform calorie counting app designed for minimalism and simplicity. Provides a beginner-friendly method to track nutrition by focusing on the essentials, eliminating detail such as macros and meal times. I started this project to learn mobile development and interface design.`,
         designUrl: "https://www.figma.com/design/ojnG7Z2LYuzCuDM0TMUUiA/Caloric?node-id=0-1&node-type=canvas&t=lJdGKqTurMDbI7DR-0",
         codeUrl: "https://github.com/smstone0/Caloric",
         thumbnail: "assets/caloric/caloric.png",
@@ -23,7 +23,9 @@ Concept inspired by https://lab.magiconch.com/china-ex/ and https://tenpages.git
     {
         title: "Software Engineering Group Project",
         date: "2023 - 2024",
-        description: "University group project to develop an event-finding app for industry partner, Lots For Tots. Team Leader of 8 computer science students. Developed app free of charge, allowing parents to find nearby children's events. Integrated accessibility, offering visual comfort options and filtering of events by SEN and wheelchair access. Created interactive prototypes, and iteratively gathered requirements and user feedback to guide app design. Utilised Scrumban, and paired programming and code reviews to ensure code quality. Showcased work to academics, industry leaders and peers.",
+        description: `Led an 8-person team of computer science students in a year-long university group project, developing a mobile app free of charge for industry partner, Lots For Tots - an organisation which as of 2024 distributes to 26,000 families. The app connects parents with nearby children's events and has integrated accessibility, offering visual comfort options and filtering events by SEN and wheelchair access.
+        
+We created interactive prototypes and iteratively gathered requirements and user feedback to guide app design. Using Scrumban, paired programming and code reviews, we maintained high code quality. We showcased our work to academics, industry leaders and peers.`,
         designUrl: "https://www.figma.com/design/pBlTcItDic1lt4CA2VA81k/Prototyping?t=Jc90sSWYw35fi01r-0",
         thumbnail: "assets/lots-for-tots/lots-for-tots.png",
         moreImages: ['assets/lots-for-tots/login.jpeg', 'assets/lots-for-tots/event-page.jpeg', 'assets/lots-for-tots/forgot-password.jpeg', 'assets/lots-for-tots/settings.jpeg', 'assets/lots-for-tots/sign-up.jpeg', 'assets/lots-for-tots/subscribed.jpeg', 'assets/lots-for-tots/map.png', 'assets/lots-for-tots/prototypes.png'],
@@ -32,10 +34,12 @@ Concept inspired by https://lab.magiconch.com/china-ex/ and https://tenpages.git
     {
         title: "Operating Systems and Concurrency",
         date: "2023 - 2024",
-        description: `University project to implement a process and I/O management simulation via the POSIX API in Linux`,
+        description: `Developed a multi-threaded process simulator in C using the POSIX API on Linux, incorporating key operating system principles such as process scheduling, concurrency control, and resource management. The simulator generated and managed processes using a process table, priority-based scheduling, and linked-list-based queues for ready, I/O, and terminated processes. It supported both preemptive and non-preemptive scheduling, with processes running in a round-robin or first-come, first-served fashion depending on priority.
+
+To simulate real-world execution, the system included an I/O daemon to handle blocked processes, a booster daemon to prevent starvation, and a load balancer to distribute workloads across multiple CPUs. I achieved 96%, 12.6% higher than the average score among students who completed all parts of the coursework.`,
         thumbnail: "assets/nottingham.svg",
         languages: ["C"],
-        moreImages: ['assets/osc/output.png']
+        moreImages: ['assets/osc/architecture.png', 'assets/osc/output.png']
     },
 ]
 
