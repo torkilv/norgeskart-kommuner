@@ -1,7 +1,12 @@
 .languages {
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 15px;
+    gap: 5px;
+    align-items: center;
+    
+    svg {
+        height: 30px;
+    }
 }
 
 .language {
@@ -9,7 +14,6 @@
     color: #8EE8FF;
     font-weight: 500;
     padding: 5px 15px;
-    margin-right: 5px;
     border-radius: 15px;
 }
 
@@ -41,12 +45,12 @@
     font-size: 1.5em;
     font-weight: 500;
     color: #8EE8FF;
-    margin-top: 0;
-    margin-bottom: 10px;
+    margin: 0;
 }
 
 #date {
-    font-size: small;
+    font-size: medium;
+    font-weight: bold;
     color: #D9D9D9;
 }
 
@@ -90,22 +94,15 @@
     cursor: pointer;
 }
 
-.content {
+#description {
     white-space: pre-wrap;
 }
 
-#description {
-    font-weight:500;
-    padding-top: 2.5%;
-}
-
-#description-body {
-    color: #D9D9D9;
-}
-
-#code-design {
-    display: flex;
+#links {
     gap: 20px;
+    display: flex;
+    justify-content: end;
+    margin-bottom: 10px;
 }
 
 #link {
@@ -127,22 +124,24 @@
     padding-right: 5px;
 }
 
-@media (min-width: 768px) {
-    .languages-and-links {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
+#languages-date {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
 
-    #image-description {
+#header {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+@media (min-width: 768px) {
+    #content {
         display: flex;
         align-items: start;
-    }
-
-    .languages {
-        margin-bottom: 0;
     }
 
     #link {
@@ -150,17 +149,6 @@
     }
 
     #description {
-        padding-top: 0;
-        margin-top: 0;
-    }
-
-    #title-date {
-        justify-content: space-between;
-        display: flex;
-        align-items: center;
-    }
-
-    .content {
         margin-left: 2.5%;
         margin-right: 1%;
     }
@@ -170,12 +158,38 @@
     }
  }
 
- @media (min-width: 1400px) {
-    .content {
-        margin-right: 10%;
+@media (max-width: 1024px) {
+    #header {
+        flex-direction: column;
     }
 
+    #title {
+        width: 100%;
+    }
+
+    #separator {
+        display: none;
+    }
+
+    #languages-date {
+        width: 100%;
+    }
+}
+
+@media (max-width: 550px) { 
+    #languages-date {
+        margin: 10px 0;
+        flex-direction: column;
+        gap: 0; 
+    }
+
+    #title {
+        width: auto;
+    }
+}
+
+ @media (min-width: 1400px) {
     #description {
-        padding-top: 2.5%;
+        margin-right: 10%;
     }
  }

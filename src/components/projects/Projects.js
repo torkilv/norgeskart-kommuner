@@ -4,6 +4,7 @@ import './Projects.css';
 import {ReactComponent as LinkIcon} from '../../assets/link.svg';
 import {ReactComponent as ArrowIcon} from '../../assets/arrow-up-right.svg';
 import Modal from '../modal/Modal.js';
+import languageIcons from '../language/languageIcons.js';
 
   function Projects() {
     return (
@@ -29,32 +30,33 @@ import Modal from '../modal/Modal.js';
     return (
       <div class="project">
         {modalOpen && <Modal images={project.moreImages} onClose={toggleModal} project={project}/>}
-        <div id="title-date">
+        <div id="header">
           <h3 id="title">{project.title}</h3>
-          <p id="date">{project.date}</p>
+          <div id="languages-date">
+          <div className="languages">
+              {project.languages.map((language, index) => {
+                const LanguageIcon = languageIcons[language];
+                return (
+                  LanguageIcon ? <LanguageIcon/> : <span key={index} className="language">{language}</span>
+                );
+            })}
+          </div>
+            <p id="separator">|</p>
+            <p id="date">{project.date}</p>
+          </div>
         </div>
-        <div id="image-description">
+        <div id="content">
           <a class="image-container" href={project.url}>
           <img src={project.thumbnail} alt={project.url}></img>
           <MoreImages images={project.moreImages} toggleModal={toggleModal}></MoreImages>
           </a>
-          <div class="content">
             <p id="description">{project.description}</p>
-            <p id="description-body">{project.detail}</p>
-          </div>
         </div>
-        <div className='languages-and-links'>
-          <div className='languages'>
-            {project.languages.map((language, index) => (
-              <span key={index} className="language">{language}</span>
-            ))}
-          </div>
-          <div id="code-design">
+          <div id="links">
             <Link text="Page" url={project.pageUrl}/>
             <Link text="Code" url={project.codeUrl} />
             <Link text="Design" url={project.designUrl} />
           </div>
-        </div>
       </div>
 
     );
