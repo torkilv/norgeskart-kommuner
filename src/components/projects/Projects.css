@@ -2,6 +2,11 @@
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
+    align-items: center;
+    
+    svg {
+        height: 30px;
+    }
 }
 
 .language {

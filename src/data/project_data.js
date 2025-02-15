@@ -18,7 +18,7 @@ Concept inspired by https://lab.magiconch.com/china-ex/ and https://tenpages.git
         codeUrl: "https://github.com/smstone0/Caloric",
         thumbnail: "assets/caloric/caloric.png",
         moreImages: [],
-        languages: ["Flutter", "SQL", "Figma"]
+        languages: ["Flutter", "SQLite", "Figma"]
     },
     {
         title: "Software Engineering Group Project",

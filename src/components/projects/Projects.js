@@ -37,9 +37,7 @@ import languageIcons from '../language/languageIcons.js';
               {project.languages.map((language, index) => {
                 const LanguageIcon = languageIcons[language];
                 return (
-                  <span key={index} className="language">
-                      {LanguageIcon ? <LanguageIcon/> : language}
-                  </span>
+                  LanguageIcon ? <LanguageIcon/> : <span key={index} className="language">{language}</span>
                 );
             })}
           </div>
