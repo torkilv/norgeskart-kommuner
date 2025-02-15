@@ -37,10 +37,17 @@ We created interactive prototypes and iteratively gathered requirements and user
         description: `Developed a multi-threaded process simulator in C using the POSIX API on Linux, incorporating key operating system principles such as process scheduling, concurrency control, and resource management. The simulator manages process creation, execution, and termination using a process table, priority-based scheduling, and linked-list-based queues for ready, I/O, and terminated processes. It supports both preemptive and non-preemptive scheduling, with processes running in a round-robin or FCFS fashion depending on priority. Semaphores and mutexes are used for synchronisation.
 
 To simulate real-world execution, the system includes an I/O daemon to handle blocked processes, a booster daemon to prevent starvation, and a load balancer to distribute workloads across multiple CPUs. I achieved 96%, 12.6% higher than the average score among students who completed all coursework components.`,
-        thumbnail: "assets/nottingham.svg",
+        thumbnail: "assets/osc/architecture.png",
         languages: ["C"],
-        moreImages: ['assets/osc/architecture.png', 'assets/osc/output.png']
+        moreImages: ['assets/osc/output.png']
     },
+    {
+        title: "Reversi",
+        date: "2023",
+        description: `Developed the Reversi board game in Java using the MVC design pattern. The game features an AI opponent which greedily chooses the best available move.`,
+        languages: ["Java"],
+        thumbnail: "assets/nottingham.svg",
+    }
 ]
 
 export default projects;

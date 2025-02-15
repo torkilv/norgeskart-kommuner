@@ -6,6 +6,7 @@ import FlutterIcon from "./FlutterIcon";
 import SQLiteIcon from "./SQLiteIcon";
 import FigmaIcon from "./FigmaIcon";
 import CIcon from "./CIcon";
+import JavaIcon from "./JavaIcon";
 
 const languageIcons = {
     'JavaScript': JavaScriptIcon,
@@ -16,6 +17,7 @@ const languageIcons = {
     'SQLite': SQLiteIcon,
     'Figma': FigmaIcon,
     'C': CIcon,
+    'Java': JavaIcon,
 };
 
 export default languageIcons;
