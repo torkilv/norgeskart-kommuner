@@ -10,6 +10,7 @@ import JavaIcon from "./JavaIcon";
 import PythonIcon from "./PythonIcon";
 import FirebaseIcon from "./FirebaseIcon";
 import PHPIcon from "./PHPIcon";
+import MySQLIcon from "./MySQLIcon";
 
 const languageIcons = {
     'JavaScript': JavaScriptIcon,
@@ -24,6 +25,7 @@ const languageIcons = {
     'Python': PythonIcon,
     'Firebase': FirebaseIcon,
     'PHP': PHPIcon,
+    'MySQL': MySQLIcon,
 };
 
 export default languageIcons;
