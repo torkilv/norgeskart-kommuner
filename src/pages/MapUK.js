@@ -1,5 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import {ReactComponent as Map} from '../assets/MapChart_Map.svg';
+import {ReactComponent as GithubIcon} from '../assets/github-mark-white.svg';
+import {ReactComponent as DownloadIcon} from '../assets/download.svg';
+import {ReactComponent as ResetIcon} from '../assets/delete.svg';
 
 function MapUK() {
     const [selectedCounty, setSelectedCounty] = useState(null);
@@ -75,13 +78,39 @@ function MapUK() {
         localStorage.setItem('countyScores', JSON.stringify(resetScores)); // Save to localStorage
     }
 
+    const download = () => {
+        const svgElement = document.getElementById('map');
+        const serializer = new XMLSerializer();
+        const svgString = serializer.serializeToString(svgElement);
+        const blob = new Blob([svgString], { type: 'image/svg+xml;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = 'map.svg';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
+    }
+
     return (
-        <div id="MapUK">
+        <div>
             {selectedCounty && <CountyCard countyName={selectedCounty} position={cardPosition} levelClick={levelClick}/>}
-            <div id="map-container">
-                <button id="reset" onClick={reset}>Reset</button>
-                <Map id="map" onClick={countyClick}/>
-            </div>
+                <span id="buttons">
+                    <span className="tooltip" onClick={reset}>
+                        <ResetIcon/>
+                        <span className="tooltip-text">Reset</span>
+                    </span>
+                    <span className="tooltip" onClick={download}>
+                        <DownloadIcon/>
+                        <span className="tooltip-text">Download</span>
+                    </span>
+                    <span className="tooltip">
+                        <a href="https://github.com/smstone0/smstone0.github.io"><GithubIcon/></a>
+                        <span className="tooltip-text">GitHub</span>
+                    </span>
+                </span>
+                <Map onClick={countyClick}/>
         </div>
     )
 }
