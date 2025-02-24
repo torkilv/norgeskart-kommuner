@@ -79,12 +79,23 @@ function MapUK() {
     }
 
     const download = () => {
+        const svgElement = document.getElementById('map');
+        const serializer = new XMLSerializer();
+        const svgString = serializer.serializeToString(svgElement);
+        const blob = new Blob([svgString], { type: 'image/svg+xml;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = 'map.svg';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
     }
 
     return (
-        <div id="MapUK">
+        <div>
             {selectedCounty && <CountyCard countyName={selectedCounty} position={cardPosition} levelClick={levelClick}/>}
-            <div id="map-container">
                 <span id="buttons">
                     <span className="tooltip" onClick={reset}>
                         <ResetIcon/>
@@ -99,8 +110,7 @@ function MapUK() {
                         <span className="tooltip-text">GitHub</span>
                     </span>
                 </span>
-                <Map id="map" onClick={countyClick}/>
-            </div>
+                <Map onClick={countyClick}/>
         </div>
     )
 }
