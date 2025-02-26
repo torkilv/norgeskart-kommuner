@@ -73,6 +73,17 @@
   fill: black;
 }
 
+.map-tooltip {
+  position: absolute;
+  background-color: black;
+  color: #fff;
+  padding: 5px;
+  border-radius: 3px;
+  font-size: 12px;
+  pointer-events: none;
+  z-index: 1000;
+}
+
 .tooltip {
   position: relative;
   display: inline-block;

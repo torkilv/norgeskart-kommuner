@@ -62,6 +62,46 @@ function MapUK() {
         }
     }
 
+    const countyHover = (e) => {
+        const target = e.target;
+        if (target.tagName === "path" && target.hasAttribute("name")) {
+            const countyName = target.getAttribute("name");
+            const tooltip = document.createElement('div');
+            tooltip.className = 'map-tooltip';
+            tooltip.textContent = countyName;
+            document.body.appendChild(tooltip);
+    
+            const updateTooltipPosition = (event) => {
+                const { clientX: x, clientY: y } = event;
+                const tooltipWidth = tooltip.offsetWidth;
+                const tooltipHeight = tooltip.offsetHeight;
+                const viewportWidth = window.innerWidth;
+                const viewportHeight = window.innerHeight;
+    
+                let adjustedX = x + 10;
+                let adjustedY = y + 10;
+    
+                if (adjustedX + tooltipWidth > viewportWidth) {
+                    adjustedX = x - tooltipWidth - 10;
+                }
+                if (adjustedY + tooltipHeight > viewportHeight) {
+                    adjustedY = y - tooltipHeight - 10;
+                }
+    
+                tooltip.style.left = `${adjustedX}px`;
+                tooltip.style.top = `${adjustedY}px`;
+            };
+    
+            updateTooltipPosition(e);
+    
+            target.addEventListener('mousemove', updateTooltipPosition);
+            target.addEventListener('mouseleave', () => {
+                document.body.removeChild(tooltip);
+                target.removeEventListener('mousemove', updateTooltipPosition);
+            }, { once: true });
+        }
+    };
+
     const levelClick = (level) => {
         const updatedScores = {...countyScores, [selectedCounty]: level};
         setCountyScores(updatedScores);
@@ -110,7 +150,7 @@ function MapUK() {
                         <span className="tooltip-text">GitHub</span>
                     </span>
                 </span>
-                <Map onClick={countyClick}/>
+                <Map onClick={countyClick} onMouseOver={countyHover}/>
         </div>
     )
 }
