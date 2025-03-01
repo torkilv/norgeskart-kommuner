@@ -111,6 +111,12 @@
   opacity: 1;
 }
 
+@media (max-width: 768px) { /* Target mobile devices */
+  .map-tooltip, .tooltip-text {
+    display: none;
+  }
+}
+
 #not-found {
   justify-self: center;
   margin-top: 20%;
