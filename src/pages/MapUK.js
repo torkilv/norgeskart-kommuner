@@ -35,28 +35,31 @@ function MapUK() {
         }
     };
 
+    const adjustCardPosition = (x, y) => {
+        const cardWidth = 225; // Prevent card from going off screen
+        const cardHeight = 330;
+        const viewportWidth = window.innerWidth;
+        const viewportHeight = window.innerHeight;
+        let adjustedX = x;
+        let adjustedY = y;
+
+        if (x + cardWidth > viewportWidth) {
+            adjustedX = viewportWidth - cardWidth - 10;
+        }
+        if (y + cardHeight > viewportHeight) {
+            adjustedY = viewportHeight - cardHeight;
+        }
+
+        setCardPosition({x: adjustedX, y: adjustedY});
+    };
+
     const countyClick = (e) => {
         const target = e.target;
-        if(target.tagName === "path" && target.hasAttribute("name")) {
+        if (target.tagName === "path" && target.hasAttribute("name")) {
             const countyName = target.getAttribute("name");
-            const {clientX: x, clientY: y} = e;
+            const { clientX: x, clientY: y } = e;
             setSelectedCounty(countyName);
-
-            const cardWidth = 225; // Prevent card from going off screen
-            const cardHeight = 330;
-            const viewportWidth = window.innerWidth;
-            const viewportHeight = window.innerHeight;
-            let adjustedX = x;
-            let adjustedY = y;
-
-            if (x + cardWidth > viewportWidth) {
-                adjustedX = viewportWidth - cardWidth - 10;
-            }
-            if (y + cardHeight > viewportHeight) {
-                adjustedY = viewportHeight - cardHeight;
-            }
-
-            setCardPosition({x: adjustedX, y: adjustedY});
+            adjustCardPosition(x, y);
         } else {
             setSelectedCounty(null);
         }
@@ -67,7 +70,7 @@ function MapUK() {
         if (target.tagName === "path" && target.hasAttribute("name")) {
             const countyName = target.getAttribute("name");
             const tooltip = document.createElement('div');
-            tooltip.className = 'map-tooltip';
+            tooltip.className = 'map-tooltip radius tooltip';
             tooltip.textContent = countyName;
             document.body.appendChild(tooltip);
     
@@ -136,18 +139,18 @@ function MapUK() {
     return (
         <div>
             {selectedCounty && <CountyCard countyName={selectedCounty} position={cardPosition} levelClick={levelClick}/>}
-                <span id="buttons">
-                    <span className="tooltip" onClick={reset}>
+                <span className="buttons radius">
+                    <span className="button-tooltip" onClick={reset}>
                         <ResetIcon/>
-                        <span className="tooltip-text">Reset</span>
+                        <span className="button-tooltip-text radius tooltip">Reset</span>
                     </span>
-                    <span className="tooltip" onClick={download}>
+                    <span className="button-tooltip" onClick={download}>
                         <DownloadIcon/>
-                        <span className="tooltip-text">Download</span>
+                        <span className="button-tooltip-text radius tooltip">Download</span>
                     </span>
-                    <span className="tooltip">
+                    <span className="button-tooltip">
                         <a href="https://github.com/smstone0/smstone0.github.io"><GithubIcon/></a>
-                        <span className="tooltip-text">GitHub</span>
+                        <span className="button-tooltip-text radius tooltip">GitHub</span>
                     </span>
                 </span>
                 <Map onClick={countyClick} onMouseOver={countyHover}/>
@@ -158,11 +161,11 @@ function MapUK() {
 function CountyCard({countyName, position, levelClick}) {
     const {x, y} = position;
     return (
-        <div id="county-card" onClick={(e) => e.stopPropagation()} style={{
+        <div className="county-card radius" onClick={(e) => e.stopPropagation()} style={{
             left: `${x}px`,
             top: `${y}px`,
         }}>
-            <h3 id="county-name">{countyName}</h3>
+            <p id="county-name">{countyName}</p>
             <div id='card-options'>
                 <p id='lived' onClick={() => levelClick(5)}>Lived here</p>
                 <p id='stayed' onClick={() => levelClick(4)}>Stayed here</p>

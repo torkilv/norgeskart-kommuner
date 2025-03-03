@@ -1,3 +1,4 @@
+/* Mobile layout (default) - image above text */
 .languages {
     display: flex;
     flex-wrap: wrap;
@@ -26,12 +27,10 @@
 .project {
     background-color: rgba(25, 25, 25, 0.5);
     border-radius: 15px;
-    padding-left: 2.5%;
-    padding-right: 2.5%;
-    padding-top: 0.5%;
-    padding-bottom: 0.5%;
+    padding: 0.5% 2.5%;
     margin-bottom: 2.5%;
     width: 100%;
+    position: relative;
   }
 
   .project:hover {
@@ -80,7 +79,6 @@
     opacity: 0.6;
     color: #8EE8FF;
     border-radius: 15px;
-    padding: 5px 15px;
     font-weight: 500;
     display: flex;
     align-items: center;
@@ -99,10 +97,9 @@
 }
 
 #links {
-    gap: 20px;
     display: flex;
-    justify-content: end;
-    margin-bottom: 10px;
+    gap: 20px;
+    justify-content: center;
 }
 
 #link {
@@ -114,10 +111,10 @@
 
 #link:hover {
     color: #8EE8FF;
+}
 
-    svg {
-        stroke: #8EE8FF;
-    }
+#link:hover svg {
+    stroke: #8EE8FF;
 }
 
 #link svg {
@@ -132,16 +129,26 @@
 }
 
 #header {
+    margin-top: 5px;
     justify-content: space-between;
     display: flex;
     align-items: center;
     flex-direction: row;
 }
 
+/* Secondary layout - image alongside text */
 @media (min-width: 768px) {
     #content {
-        display: flex;
-        align-items: start;
+        display: block;
+    }
+
+    #links {
+        justify-content: end;
+        position: relative;
+        clear: both;
+        bottom: 0;
+        right: 0;
+        padding-bottom: 10px;
     }
 
     #link {
@@ -149,16 +156,22 @@
     }
 
     #description {
-        margin-left: 2.5%;
         margin-right: 1%;
     }
 
     .image-container {
         min-width: 375px;
         max-width: 375px;
+        float: left;
+        margin-right: 20px;
+    }
+
+    #header {
+        margin-top: 0;
     }
  }
 
+ /* Medium screens - display languages and date in same row but apart */
 @media (max-width: 1024px) {
     #header {
         flex-direction: column;
@@ -177,6 +190,7 @@
     }
 }
 
+/* Small screens - display all header content in column */
 @media (max-width: 550px) { 
     #languages-date {
         margin: 10px 0;
@@ -189,6 +203,7 @@
     }
 }
 
+/* Large screens */
  @media (min-width: 1400px) {
     #description {
         margin-right: 10%;

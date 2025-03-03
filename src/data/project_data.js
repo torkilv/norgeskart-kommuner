@@ -1,7 +1,7 @@
 const projects = [
     {
         title: "UK Travel Visualiser",
-        date: "2025 - PRESENT",
+        date: "2025",
         description: `An interactive map to visualise travel within the UK. Select areas to mark them as lived, stayed, visited, stopped, passed, or never been. The area is filled with the corresponding colour and the UK 'level' is updated.
 
 Concept inspired by https://lab.magiconch.com/china-ex/ and https://tenpages.github.io/us-level/eu.html.`,
@@ -23,7 +23,7 @@ Concept inspired by https://lab.magiconch.com/china-ex/ and https://tenpages.git
     {
         title: "Software Engineering Group Project",
         date: "2023 - 2024",
-        description: `Led an 8-person team of computer science students in a year-long university group project, developing a mobile app free of charge for industry partner, Lots For Tots - an organisation which as of 2024 distributes to 26,000 families. The app connects parents with nearby children's events and has integrated accessibility, offering visual comfort options and filtering events by SEN and wheelchair access.
+        description: `Led an 8-person team of computer science students in a year-long university group project, developing a mobile app free of charge for industry partner, Lots For Tots - an organisation which supports 26,000 families as of 2024. The app connects parents with nearby children's events and has integrated accessibility, offering visual comfort options and filtering events by SEN and wheelchair access.
         
 We created interactive prototypes and iteratively gathered requirements and user feedback to guide app design. Using Scrumban, paired programming and code reviews, we maintained high code quality. We showcased our work to academics, industry leaders and peers.`,
         designUrl: "https://www.figma.com/design/pBlTcItDic1lt4CA2VA81k/Prototyping?t=Jc90sSWYw35fi01r-0",
