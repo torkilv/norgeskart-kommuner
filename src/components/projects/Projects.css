@@ -139,8 +139,7 @@
 /* Secondary layout - image alongside text */
 @media (min-width: 768px) {
     #content {
-        display: flex;
-        align-items: start;
+        display: block;
     }
 
     #link {
@@ -148,13 +147,14 @@
     }
 
     #description {
-        margin-left: 2.5%;
         margin-right: 1%;
     }
 
     .image-container {
         min-width: 375px;
         max-width: 375px;
+        float: left;
+        margin-right: 20px;
     }
 
     #header {
