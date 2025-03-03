@@ -35,28 +35,31 @@ function MapUK() {
         }
     };
 
+    const adjustCardPosition = (x, y) => {
+        const cardWidth = 225; // Prevent card from going off screen
+        const cardHeight = 330;
+        const viewportWidth = window.innerWidth;
+        const viewportHeight = window.innerHeight;
+        let adjustedX = x;
+        let adjustedY = y;
+
+        if (x + cardWidth > viewportWidth) {
+            adjustedX = viewportWidth - cardWidth - 10;
+        }
+        if (y + cardHeight > viewportHeight) {
+            adjustedY = viewportHeight - cardHeight;
+        }
+
+        setCardPosition({x: adjustedX, y: adjustedY});
+    };
+
     const countyClick = (e) => {
         const target = e.target;
-        if(target.tagName === "path" && target.hasAttribute("name")) {
+        if (target.tagName === "path" && target.hasAttribute("name")) {
             const countyName = target.getAttribute("name");
-            const {clientX: x, clientY: y} = e;
+            const { clientX: x, clientY: y } = e;
             setSelectedCounty(countyName);
-
-            const cardWidth = 225; // Prevent card from going off screen
-            const cardHeight = 330;
-            const viewportWidth = window.innerWidth;
-            const viewportHeight = window.innerHeight;
-            let adjustedX = x;
-            let adjustedY = y;
-
-            if (x + cardWidth > viewportWidth) {
-                adjustedX = viewportWidth - cardWidth - 10;
-            }
-            if (y + cardHeight > viewportHeight) {
-                adjustedY = viewportHeight - cardHeight;
-            }
-
-            setCardPosition({x: adjustedX, y: adjustedY});
+            adjustCardPosition(x, y);
         } else {
             setSelectedCounty(null);
         }
