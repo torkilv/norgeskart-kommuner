@@ -21,6 +21,7 @@ import languageIcons from '../language/iconMapping.js';
 
   function Project({project}) {
     const [modalOpen, setModalOpen] = useState(false);
+    const sortedLinks = project.links?.sort((a, b) => a.text.localeCompare(b.text)) || [];
 
     const toggleModal = () => {
       modalOpen ? document.body.classList.remove('no-scroll') : document.body.classList.add('no-scroll');
@@ -53,9 +54,9 @@ import languageIcons from '../language/iconMapping.js';
             <p id="description">{project.description}</p>
         </div>
           <div id="links">
-            <Link text="Page" url={project.pageUrl}/>
-            <Link text="Code" url={project.codeUrl} />
-            <Link text="Design" url={project.designUrl} />
+            {sortedLinks.map((link, index) => (
+              <Link key={index} text={link.text} url={link.url} />
+            ))}
           </div>
       </div>
 
