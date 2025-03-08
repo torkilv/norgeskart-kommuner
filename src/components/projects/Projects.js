@@ -29,7 +29,7 @@ import languageIcons from '../language/iconMapping.js';
     }
 
     return (
-      <div class="project">
+      <div className="project">
         {modalOpen && <Modal images={project.moreImages} onClose={toggleModal} project={project}/>}
         <div id="header">
           <h3 id="title">{project.title}</h3>
@@ -47,8 +47,8 @@ import languageIcons from '../language/iconMapping.js';
           </div>
         </div>
         <div id="content">
-          <a class="image-container" href={project.url}>
-          <img src={project.thumbnail} alt={project.url}></img>
+          <a className="image-container" href={project.url}>
+          <img src={project.thumbnail.src} alt={project.thumbnail.alt}></img>
           <MoreImages images={project.moreImages} toggleModal={toggleModal}></MoreImages>
           </a>
             <p id="description">{project.description}</p>
