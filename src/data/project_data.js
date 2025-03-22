@@ -2,9 +2,7 @@ const projects = [
     {
         title: "UK Travel Visualiser",
         date: "2025",
-        description: `An interactive map to visualise travel within the UK. Select areas to mark them as lived, stayed, visited, stopped, passed, or never been. The area is filled with the corresponding colour and the UK 'level' is updated.
-
-Concept inspired by https://lab.magiconch.com/china-ex/ and https://tenpages.github.io/us-level/eu.html.`,
+        description: `An interactive map to visualise travel within the UK, allowing users to mark areas as lived, stayed, visited, stopped, passed through, or never been. The selected areas are filled with corresponding colours, and the UK 'level' is dynamically updated. The map supports persistence via local storage and offers the option to download and share with others.`,
         thumbnail: { src: "assets/MapChart_Map.svg", alt: "UK Travel Visualiser Thumbnail" },
         languages: ["React", "JavaScript", "HTML", "CSS"],
         links: [
