@@ -1,4 +1,9 @@
 /* Mobile layout (default) - image above text */
+
+* {
+    box-sizing: border-box;
+}
+
 .languages {
     display: flex;
     flex-wrap: wrap;
@@ -121,6 +126,7 @@
 
 #link svg {
     padding-right: 5px;
+    width: 20px;
 }
 
 #languages-date {
