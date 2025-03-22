@@ -153,6 +153,12 @@ function MapUK() {
                         <span className="button-tooltip-text radius tooltip">GitHub</span>
                     </button>
                 </span>
+                <div id="footnote">
+                    Concept inspired by
+                    <a href='https://lab.magiconch.com/china-ex/' target='_blank' rel="noopener noreferrer"> China-ex </a>
+                    &
+                    <a href='https://tenpages.github.io/us-level/eu.html' target='_blank' rel="noopener noreferrer"> US-level/eu</a>
+                </div>
                 <Map onClick={countyClick} onMouseOver={countyHover}/>
         </div>
     )
