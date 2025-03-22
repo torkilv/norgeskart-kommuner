@@ -71,7 +71,7 @@ import languageIcons from '../language/iconMapping.js';
   function Link({text, url}) {
     return (
       url && (
-        <a id="link" href={url}>
+        <a id="link" target='_blank' rel="noopener noreferrer" href={url}>
           <span><LinkIcon/>{text}</span>
         </a>
         )
