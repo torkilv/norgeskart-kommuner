@@ -5,13 +5,38 @@ import {ReactComponent as LinkIcon} from '../../assets/link.svg';
 import {ReactComponent as ArrowIcon} from '../../assets/arrow-up-right.svg';
 import Modal from '../modal/Modal.js';
 import languageIcons from '../language/iconMapping.js';
+import Dropdown from '../dropdown/Dropdown.js';
 
   function Projects() {
+    const allTechStacks = [...new Set(projects.flatMap(project => project.languages))];
+    const [selectedTechStacks, setSelectedTechStacks] = useState([]);
+  
+    const handleTechStackChange = (techStack) => {
+      setSelectedTechStacks((prevSelected) =>
+        prevSelected.includes(techStack)
+          ? prevSelected.filter((stack) => stack !== techStack)
+          : [...prevSelected, techStack]
+      );
+    };
+
+    const filteredProjects = selectedTechStacks.length === 0
+    ? projects
+    : projects.filter((project) =>
+        project.languages.some((language) => selectedTechStacks.includes(language))
+      );
+
     return (
       <div>
-        <h2>Projects</h2>
+        <div id='info'>
+          <h2>Projects</h2>
+          <Dropdown
+              allTechStacks={allTechStacks}
+              selectedTechStacks={selectedTechStacks}
+              onTechStackChange={handleTechStackChange}
+          />
+        </div>
         <div id="projects">
-        {projects.map((project, index) => (
+        {filteredProjects.map((project, index) => (
             <Project key={index} project={project} />
           ))}
           </div>

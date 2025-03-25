@@ -4,6 +4,13 @@
     box-sizing: border-box;
 }
 
+#info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .languages {
     display: flex;
     flex-wrap: wrap;
