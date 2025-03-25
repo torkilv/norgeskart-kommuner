@@ -102,6 +102,21 @@ To simulate real-world execution, the system includes an I/O daemon to handle bl
         description: `University coursework to implement a C network client to fetch multiple "Quotes of the Day" from a server.`,
         thumbnail: { src: "assets/nottingham.svg", alt: "Computer Fundamentals Thumbnail" },
         languages: ["C"]
+    },
+    {
+        title: "GWC 2022",
+        date: "2022",
+        description: `Three web projects I built during the Girls Who Code Summer Immersion Program in 2022, a two-week virtual program sponsored by Morgan Stanley. This was my first formal introduction to HTML, CSS and JavaScript and putting these skills into practice, including adherence web content accessibility guidelines, such as colour contrast and alt text.
+
+1. An 'activist website' to spread awareness about a global issue - I chose electric vehicles (EVs)
+2. A personal website
+3. A BuzzFeed-style 'personality quiz' - I chose summer vs winter`,
+        thumbnail: { src: "assets/gwc/activist-website.png", alt: "Activist Website" },
+        moreImages: ['assets/gwc/activist-website.png', 'assets/gwc/personal-website.png', 'assets/gwc/quiz.png'],
+        languages: ["HTML", "CSS", "JavaScript"],
+        links: [
+            { text: "Code", url: "https://github.com/smstone0/gwc-2022" },
+        ]
     }
 ];
 
