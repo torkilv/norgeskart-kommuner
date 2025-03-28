@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import './Dropdown.css';
+import {ReactComponent as Chevron} from '../../assets/down-arrow.svg';
 
 function Dropdown({ allTechStacks, selectedTechStacks, onTechStackChange }) {
     const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -10,7 +11,7 @@ function Dropdown({ allTechStacks, selectedTechStacks, onTechStackChange }) {
 
     return (
     <div className="dropdown">
-      <button className="dropbtn" onClick={toggleDropdown}>Filter Tech Stack</button>
+      <button className="dropbtn" onClick={toggleDropdown}>Filter Tech Stack <Chevron/> </button>
       {dropdownOpen && <div className="dropdown-content">
         {allTechStacks.map((techStack) => (
           <label key={techStack} className="dropdown-item">
