@@ -7,8 +7,14 @@ import Modal from '../modal/Modal.js';
 import languageIcons from '../language/iconMapping.js';
 import Dropdown from '../dropdown/Dropdown.js';
 
+  const techStackFrequency = projects.flatMap(project => project.languages).reduce((acc, language) => {
+    acc[language] = (acc[language] || 0) + 1;
+    return acc;
+  }, {});
+
+  const allTechStacks = Object.keys(techStackFrequency).sort((a, b) => techStackFrequency[b] - techStackFrequency[a]);
+
   function Projects() {
-    const allTechStacks = [...new Set(projects.flatMap(project => project.languages))];
     const [selectedTechStacks, setSelectedTechStacks] = useState([]);
   
     const handleTechStackChange = (techStack) => {
