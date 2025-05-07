@@ -30,6 +30,18 @@
     position: absolute;
     pointer-events: none;
   }
+
+  #close-icon {
+    display: flex;
+    justify-self: end;
+    cursor: pointer;
+  }
+
+  #footnote-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   
   .button-tooltip {
     all: unset;
@@ -83,7 +95,6 @@
   
   .footnote-container p {
     margin: 0;
-    margin-bottom: 5px;
   }
   
   .footnote-container a {
