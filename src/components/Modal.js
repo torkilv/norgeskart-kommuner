@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import {ReactComponent as CloseIcon} from '../../assets/close.svg';
-import {ReactComponent as RightArrow} from '../../assets/right-arrow.svg';
-import {ReactComponent as LeftArrow} from '../../assets/left-arrow.svg';
-import './Modal.css';
+import {ReactComponent as CloseIcon} from '../assets/close.svg';
+import {ReactComponent as RightArrow} from '../assets/right-arrow.svg';
+import {ReactComponent as LeftArrow} from '../assets/left-arrow.svg';
+import '../styles/Modal.css';
 
 function Modal({images, onClose, project}) {
 const [index, setIndex] = useState(0);

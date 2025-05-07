@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useRef} from 'react';
-import './Dropdown.css';
-import {ReactComponent as Chevron} from '../../assets/down-arrow.svg';
+import '../styles/Dropdown.css';
+import {ReactComponent as Chevron} from '../assets/down-arrow.svg';
 
 function Dropdown({ allTechStacks, selectedTechStacks, onTechStackChange }) {
     const [dropdownOpen, setDropdownOpen] = useState(false);
