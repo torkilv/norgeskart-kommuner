@@ -3,6 +3,7 @@ import {ReactComponent as Map} from '../assets/MapChart_Map.svg';
 import {ReactComponent as GithubIcon} from '../assets/github-mark-white.svg';
 import {ReactComponent as DownloadIcon} from '../assets/download.svg';
 import {ReactComponent as ResetIcon} from '../assets/delete.svg';
+import {ReactComponent as InfoIcon} from '../assets/info.svg';
 
 function MapUK() {
     const [selectedCounty, setSelectedCounty] = useState(null);
@@ -11,6 +12,7 @@ function MapUK() {
         const savedScores = localStorage.getItem('countyScores');
         return savedScores ? JSON.parse(savedScores) : {};
     });
+    const [footnoteOpen, setFootnoteOpen] = useState(false);
 
     useEffect(() => { // Upon a state update, colour map and calculate total level
         Object.keys(countyScores).forEach(county => {
@@ -153,12 +155,23 @@ function MapUK() {
                         <span className="button-tooltip-text radius tooltip">GitHub</span>
                     </button>
                 </span>
-                <div id="footnote">
-                    Concept inspired by
-                    <a href='https://lab.magiconch.com/china-ex/' target='_blank' rel="noopener noreferrer"> China-ex </a>
-                    &
-                    <a href='https://tenpages.github.io/us-level/eu.html' target='_blank' rel="noopener noreferrer"> US-level/eu</a>
+                { footnoteOpen ? 
+                <div id="footnote" onMouseLeave={() => setFootnoteOpen(false)}>
+                    <div className='footnote-container radius'>
+                        <p>Visualise your UK travel and share with friends and family!</p>
+                        Concept inspired by
+                        <a href='https://lab.magiconch.com/china-ex/' target='_blank' rel="noopener noreferrer"> China-ex </a>
+                        &
+                        <a href='https://tenpages.github.io/us-level/eu.html' target='_blank' rel="noopener noreferrer"> US-level/eu</a>
+                        , credit to 
+                        <a href='https://www.mapchart.net/uk.html' target='_blank' rel="noopener noreferrer"> MapChart</a>
+                    </div>
                 </div>
+                :
+                <div id="footnote" onMouseEnter={() => setFootnoteOpen(true)}>
+                    <InfoIcon/>
+                </div>
+            }
                 <Map onClick={countyClick} onMouseOver={countyHover}/>
         </div>
     )
