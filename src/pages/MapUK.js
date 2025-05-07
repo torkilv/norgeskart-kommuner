@@ -5,6 +5,7 @@ import {ReactComponent as DownloadIcon} from '../assets/download.svg';
 import {ReactComponent as ResetIcon} from '../assets/delete.svg';
 import {ReactComponent as InfoIcon} from '../assets/info.svg';
 import '../styles/MapUK.css';
+import {ReactComponent as CloseIcon} from '../assets/close-black.svg';
 
 function MapUK() {
     const [selectedCounty, setSelectedCounty] = useState(null);
@@ -158,8 +159,11 @@ function MapUK() {
                 </span>
                 { footnoteOpen ? 
                 <div id="footnote" onMouseLeave={() => setFootnoteOpen(false)}>
-                    <div className='footnote-container radius'>
-                        <p>Visualise your UK travel and share with friends and family!</p>
+                    <div className='footnote-container radius'>       
+                        <div id="footnote-row">
+                            <p>Visualise your UK travel and share with friends and family!</p>
+                            <CloseIcon id="close-icon" onClick={() => setFootnoteOpen(false)}/>
+                        </div>
                         Concept inspired by
                         <a href='https://lab.magiconch.com/china-ex/' target='_blank' rel="noopener noreferrer"> China-ex </a>
                         &
