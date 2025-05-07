@@ -24,6 +24,12 @@
 
 /* Not Found Page */
 #not-found {
-  justify-self: center;
-  margin-top: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#not-found-image {
+  margin-top: 20px;
+  border-radius: 5px;
 }
