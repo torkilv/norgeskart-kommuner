@@ -4,6 +4,7 @@ import {ReactComponent as GithubIcon} from '../assets/github-mark-white.svg';
 import {ReactComponent as DownloadIcon} from '../assets/download.svg';
 import {ReactComponent as ResetIcon} from '../assets/delete.svg';
 import {ReactComponent as InfoIcon} from '../assets/info.svg';
+import '../styles/MapUK.css';
 
 function MapUK() {
     const [selectedCounty, setSelectedCounty] = useState(null);
