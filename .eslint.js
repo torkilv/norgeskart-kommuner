@@ -4,25 +4,25 @@ module.exports = {
     es2021: true,
   },
   extends: [
-    'eslint:recommended',
-    'plugin:react/recommended',
-    'plugin:prettier/recommended', // Adds prettier + disables conflicting rules
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended", // Adds prettier + disables conflicting rules
   ],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
     },
-    ecmaVersion: 'latest',
-    sourceType: 'module',
+    ecmaVersion: "latest",
+    sourceType: "module",
   },
-  plugins: ['react'],
+  plugins: ["react"],
   rules: {
     // Optional custom rules
-    'prettier/prettier': 'error',
+    "prettier/prettier": "error",
   },
   settings: {
     react: {
-      version: 'detect',
+      version: "detect",
     },
   },
 };
