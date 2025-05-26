@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import {useState, useEffect} from 'react';
 import {ReactComponent as Map} from '../assets/MapChart_Map.svg';
 import {ReactComponent as GithubIcon} from '../assets/github-mark-white.svg';
 import {ReactComponent as DownloadIcon} from '../assets/download.svg';
@@ -16,7 +16,10 @@ function MapUK() {
     });
     const [footnoteOpen, setFootnoteOpen] = useState(false);
 
-    useEffect(() => { // Upon a state update, colour map and calculate total level
+    /**
+     * Colour map and calculate total level when countyScores change
+     */
+    useEffect(() => {
         Object.keys(countyScores).forEach(county => {
             const element = document.querySelector(`[name="${county}"]`);
             if (element) {

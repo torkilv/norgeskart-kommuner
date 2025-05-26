@@ -1,4 +1,3 @@
-import React from 'react';
 import Projects from '../components/Projects.js'
 import Header from '../components/Header.js';
 
