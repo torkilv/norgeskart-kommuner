@@ -1,12 +1,12 @@
-import Header from '../components/Header.js';
-import image from '../assets/404.jpg';
+import Header from "../components/Header.js";
+import image from "../assets/404.jpg";
 
 function NotFound() {
-    return (
-      <div id="Home">
+  return (
+    <div id="Home">
       <div id="Content">
         <header>
-          <Header/>
+          <Header />
         </header>
         <div id="not-found">
           <h1>Page not found!</h1>
@@ -14,7 +14,7 @@ function NotFound() {
         </div>
       </div>
     </div>
-    );
-  }
+  );
+}
 
 export default NotFound;

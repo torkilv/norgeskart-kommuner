@@ -1,7 +1,11 @@
 /* Home Page */
 #Home {
   background-color: black;
-  background-image: linear-gradient(180deg, rgba(0, 0, 0) 0%, rgba(7, 4, 47, 0.5) 100%);
+  background-image: linear-gradient(
+    180deg,
+    rgba(0, 0, 0) 0%,
+    rgba(7, 4, 47, 0.5) 100%
+  );
 }
 
 #Content {
@@ -13,13 +17,13 @@
 
 @media (max-width: 1600px) {
   #Content {
-      width: 80%;
+    width: 80%;
   }
 }
 
 @media (max-width: 800px) {
   #Content {
-      width: 90%;
+    width: 90%;
   }
 }
 

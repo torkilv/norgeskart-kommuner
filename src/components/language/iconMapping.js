@@ -13,19 +13,19 @@ import PHPIcon from "./PHPIcon";
 import MySQLIcon from "./MySQLIcon";
 
 const languageIcons = {
-    'JavaScript': JavaScriptIcon,
-    'React': ReactIcon,
-    'HTML': HTMLIcon,
-    'CSS': CSSIcon,
-    'Flutter': FlutterIcon,
-    'SQLite': SQLiteIcon,
-    'Figma': FigmaIcon,
-    'C': CIcon,
-    'Java': JavaIcon,
-    'Python': PythonIcon,
-    'Firebase': FirebaseIcon,
-    'PHP': PHPIcon,
-    'MySQL': MySQLIcon,
+  JavaScript: JavaScriptIcon,
+  React: ReactIcon,
+  HTML: HTMLIcon,
+  CSS: CSSIcon,
+  Flutter: FlutterIcon,
+  SQLite: SQLiteIcon,
+  Figma: FigmaIcon,
+  C: CIcon,
+  Java: JavaIcon,
+  Python: PythonIcon,
+  Firebase: FirebaseIcon,
+  PHP: PHPIcon,
+  MySQL: MySQLIcon,
 };
 
 export default languageIcons;
