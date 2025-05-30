@@ -10,11 +10,13 @@ import './NorwegianMap.css';
 
 const NorwegianMap = () => {
   const [selectedMunicipality, setSelectedMunicipality] = useState(null);
-  const [cardPosition, setCardPosition] = useState({ x: 0, y: 0 });
+  const [hoveredMunicipality, setHoveredMunicipality] = useState(null);
+  const [showFootnote, setShowFootnote] = useState(false);
   const [markedMunicipalities, setMarkedMunicipalities] = useState(() => {
     const savedData = localStorage.getItem('markedMunicipalities');
     return savedData ? JSON.parse(savedData) : {};
   });
+  const [cardPosition, setCardPosition] = useState({ x: 0, y: 0 });
   const [footnoteOpen, setFootnoteOpen] = useState(false);
 
   useEffect(() => {
@@ -23,18 +25,6 @@ const NorwegianMap = () => {
       setMarkedMunicipalities(JSON.parse(savedData));
     }
   }, []);
-
-  // Calculate total level
-  const totalLevel = Object.values(markedMunicipalities).reduce((acc, curr) => {
-    const levelValues = {
-      'lived': 5,
-      'stayed': 4,
-      'visited': 3,
-      'stopped': 2,
-      'passed': 1
-    };
-    return acc + (levelValues[curr] || 0);
-  }, 0);
 
   const getColorByLevel = (level) => {
     switch (level) {
@@ -177,7 +167,7 @@ const NorwegianMap = () => {
         </div>
       </div>
       <div className="map-container" onClick={(e) => {
-        if (e.target === e.currentTarget) {
+        if (e.target === e.currentTarget || e.target.classList.contains('leaflet-container')) {
           setSelectedMunicipality(null);
         }
       }}>
@@ -186,6 +176,11 @@ const NorwegianMap = () => {
           zoom={6} 
           style={{ height: '100%', width: '100%' }}
           zoomControl={false}
+          onClick={(e) => {
+            if (e.originalEvent.target.classList.contains('leaflet-container')) {
+              setSelectedMunicipality(null);
+            }
+          }}
         >
           <TileLayer 
             url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
