@@ -1,0 +1,234 @@
+.norwegian-map-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 0;
+  background-color: white;
+  color: black;
+}
+
+.map-controls {
+  background-color: white;
+  padding: 15px 20px;
+  border: 2.8px solid black;
+  border-radius: 7.5px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.map-controls h2 {
+  margin: 0;
+  color: black;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.map-controls select {
+  padding: 6px 10px;
+  border: 2.8px solid black;
+  border-radius: 7.5px;
+  font-size: 14px;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  min-width: 120px;
+}
+
+.map-controls select:hover {
+  background-color: #f5f5f5;
+}
+
+.map-controls select:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.map-controls label {
+  font-weight: 500;
+  color: black;
+  font-size: 14px;
+}
+
+.map-actions {
+  display: flex;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.map-actions button {
+  padding: 6px 12px;
+  background-color: white;
+  color: black;
+  border: 2.8px solid black;
+  border-radius: 7.5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.map-actions button:hover {
+  background-color: #f5f5f5;
+}
+
+.map-actions input[type="file"] {
+  display: none;
+}
+
+.map-actions label {
+  padding: 6px 12px;
+  background-color: white;
+  color: black;
+  border: 2.8px solid black;
+  border-radius: 7.5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.map-actions label:hover {
+  background-color: #f5f5f5;
+}
+
+.map-container {
+  flex: 1;
+  position: relative;
+  background-color: white;
+}
+
+.municipality-info {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: white;
+  padding: 12px 15px;
+  border-radius: 7.5px;
+  border: 2.8px solid black;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.municipality-info h3 {
+  margin: 0 0 5px 0;
+  color: black;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.municipality-info p {
+  margin: 0;
+  color: black;
+  font-size: 14px;
+}
+
+.legend {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: white;
+  padding: 12px 15px;
+  border-radius: 7.5px;
+  border: 2.8px solid black;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.legend h3 {
+  margin: 0 0 8px 0;
+  color: black;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin: 6px 0;
+}
+
+.legend-color {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  margin-right: 8px;
+  border: 1px solid black;
+}
+
+.legend-label {
+  font-size: 13px;
+  color: black;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ccc;
+}
+
+.municipality-card {
+  background-color: white;
+  color: black;
+  position: absolute;
+  border: 2.8px solid black;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 225px;
+  padding: 10px;
+}
+
+#municipality-name {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  text-align: center;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+#card-options {
+  width: 100%;
+}
+
+#card-options p {
+  margin: 0;
+  padding: 10px 0;
+  box-sizing: border-box;
+  text-align: center;
+  display: block;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#card-options p:hover {
+  background-color: #f5f5f5;
+}
+
+.map-tooltip {
+  position: absolute;
+  pointer-events: none;
+  background-color: black;
+  color: white;
+  padding: 5px;
+  font-size: 12px;
+  text-align: center;
+  z-index: 1000;
+  border-radius: 7.5px;
+} 
