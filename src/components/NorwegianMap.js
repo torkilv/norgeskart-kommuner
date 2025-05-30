@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { MapContainer, TileLayer, GeoJSON } from 'react-leaflet';
 import { municipalities, categories } from '../data/norwegian_municipalities';
 import translations from '../data/translations';
+import { ReactComponent as GithubIcon } from '../assets/github-mark-white.svg';
+import { ReactComponent as InfoIcon } from '../assets/info.svg';
+import { ReactComponent as CloseIcon } from '../assets/close-black.svg';
 import 'leaflet/dist/leaflet.css';
 import './NorwegianMap.css';
 
@@ -12,6 +15,7 @@ const NorwegianMap = () => {
     const savedData = localStorage.getItem('markedMunicipalities');
     return savedData ? JSON.parse(savedData) : {};
   });
+  const [footnoteOpen, setFootnoteOpen] = useState(false);
 
   useEffect(() => {
     const savedData = localStorage.getItem('markedMunicipalities');
@@ -19,6 +23,18 @@ const NorwegianMap = () => {
       setMarkedMunicipalities(JSON.parse(savedData));
     }
   }, []);
+
+  // Calculate total level
+  const totalLevel = Object.values(markedMunicipalities).reduce((acc, curr) => {
+    const levelValues = {
+      'lived': 5,
+      'stayed': 4,
+      'visited': 3,
+      'stopped': 2,
+      'passed': 1
+    };
+    return acc + (levelValues[curr] || 0);
+  }, 0);
 
   const getColorByLevel = (level) => {
     switch (level) {
@@ -146,9 +162,25 @@ const NorwegianMap = () => {
         <div className="map-actions">
           <button onClick={clearMap}>{translations.no.clear}</button>
           <button onClick={downloadMapData}>{translations.no.download}</button>
+          <button
+            className="button-tooltip"
+            onClick={() =>
+              window.open(
+                "https://github.com/torkilv/norgeskart-kommuner",
+                "_blank"
+              )
+            }
+          >
+            <GithubIcon aria-label="Besøk GitHub" />
+            <span className="button-tooltip-text radius tooltip">GitHub</span>
+          </button>
         </div>
       </div>
-      <div className="map-container">
+      <div className="map-container" onClick={(e) => {
+        if (e.target === e.currentTarget) {
+          setSelectedMunicipality(null);
+        }
+      }}>
         <MapContainer 
           center={[60.472024, 8.468946]} 
           zoom={6} 
@@ -208,6 +240,41 @@ const NorwegianMap = () => {
           </div>
         ))}
       </div>
+      {footnoteOpen ? (
+        <div id="footnote" onMouseLeave={() => setFootnoteOpen(false)}>
+          <div className="footnote-container radius">
+            <div id="footnote-row">
+              <p>Visualiser dine reiser i Norge og del med venner og familie!</p>
+              <CloseIcon
+                id="close-icon"
+                onClick={() => setFootnoteOpen(false)}
+              />
+            </div>
+            Inspirert av
+            <a
+              href="https://lab.magiconch.com/china-ex/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {" "}
+              China-ex{" "}
+            </a>
+            &
+            <a
+              href="https://tenpages.github.io/us-level/eu.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {" "}
+              US-level/eu
+            </a>
+          </div>
+        </div>
+      ) : (
+        <div id="footnote" onMouseEnter={() => setFootnoteOpen(true)}>
+          <InfoIcon />
+        </div>
+      )}
     </div>
   );
 };

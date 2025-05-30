@@ -21,7 +21,7 @@ const translations = {
     settings: "Settings"
   },
   no: {
-    title: "Norsk Reisevisualisering",
+    title: "Kommunekjentmannsmerket",
     subtitle: "Marker områder du har vært i Norge",
     lived: "Bodd",
     stayed: "Overnattet",
