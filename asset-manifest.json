@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/norgeskart-kommuner/static/css/main.0257a7a4.css",
+    "main.js": "/norgeskart-kommuner/static/js/main.2d47b1a7.js",
+    "static/js/453.064d9ae0.chunk.js": "/norgeskart-kommuner/static/js/453.064d9ae0.chunk.js",
+    "index.html": "/norgeskart-kommuner/index.html",
+    "main.0257a7a4.css.map": "/norgeskart-kommuner/static/css/main.0257a7a4.css.map",
+    "main.2d47b1a7.js.map": "/norgeskart-kommuner/static/js/main.2d47b1a7.js.map",
+    "453.064d9ae0.chunk.js.map": "/norgeskart-kommuner/static/js/453.064d9ae0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0257a7a4.css",
+    "static/js/main.2d47b1a7.js"
+  ]
+}
