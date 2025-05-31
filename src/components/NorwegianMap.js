@@ -242,14 +242,18 @@ const NorwegianMap = () => {
               },
               geometry: m.geometry
             }))}
-            style={(feature) => ({
-              fillColor: markedMunicipalities[feature.properties.kommunenummer] 
-                ? getColorByLevel(markedMunicipalities[feature.properties.kommunenummer])
-                : 'white',
-              fillOpacity: 0.5,
-              color: 'black',
-              weight: 1
-            })}
+            style={(feature) => {
+              const municipalityCode = feature.properties.kommunenummer;
+              const level = markedMunicipalities[municipalityCode];
+              return {
+                fillColor: level ? getColorByLevel(level) : 'white',
+                fillOpacity: 0.3,
+                weight: 1,
+                opacity: 1,
+                color: '#666',
+                dashArray: '3'
+              };
+            }}
             onEachFeature={(feature, layer) => {
               layer.on({
                 click: handleMunicipalityClick,
