@@ -5,6 +5,7 @@ import translations from '../data/translations';
 import { ReactComponent as GithubIcon } from '../assets/github-mark-white.svg';
 import { ReactComponent as InfoIcon } from '../assets/info.svg';
 import { ReactComponent as CloseIcon } from '../assets/close-black.svg';
+import { ReactComponent as EditIcon } from '../assets/edit.svg';
 import 'leaflet/dist/leaflet.css';
 import './NorwegianMap.css';
 
@@ -16,6 +17,13 @@ const NorwegianMap = () => {
     const savedData = localStorage.getItem('markedMunicipalities');
     return savedData ? JSON.parse(savedData) : {};
   });
+  const [customCategories, setCustomCategories] = useState(() => {
+    const savedCategories = localStorage.getItem('customCategories');
+    return savedCategories ? JSON.parse(savedCategories) : {};
+  });
+  const [showCategoryModal, setShowCategoryModal] = useState(false);
+  const [editingCategory, setEditingCategory] = useState(null);
+  const [editingName, setEditingName] = useState('');
   const [cardPosition, setCardPosition] = useState({ x: 0, y: 0 });
   const [footnoteOpen, setFootnoteOpen] = useState(false);
 
@@ -25,6 +33,27 @@ const NorwegianMap = () => {
       setMarkedMunicipalities(JSON.parse(savedData));
     }
   }, []);
+
+  const handleCategoryEdit = (key) => {
+    setEditingCategory(key);
+    setEditingName(getCategoryName(key));
+    setShowCategoryModal(true);
+  };
+
+  const handleCategorySave = () => {
+    if (editingCategory && editingName.trim()) {
+      const updatedCategories = { ...customCategories, [editingCategory]: editingName.trim() };
+      setCustomCategories(updatedCategories);
+      localStorage.setItem('customCategories', JSON.stringify(updatedCategories));
+      setShowCategoryModal(false);
+      setEditingCategory(null);
+      setEditingName('');
+    }
+  };
+
+  const getCategoryName = (key) => {
+    return customCategories[key] || categories[key].no;
+  };
 
   const getColorByLevel = (level) => {
     switch (level) {
@@ -221,6 +250,7 @@ const NorwegianMap = () => {
           currentLevel={markedMunicipalities[selectedMunicipality]}
           translations={translations.no}
           getColorByLevel={getColorByLevel}
+          getCategoryName={getCategoryName}
         />
       )}
       <div className="legend">
@@ -228,7 +258,6 @@ const NorwegianMap = () => {
         {Object.entries(categories).map(([key, value]) => {
           let count;
           if (key === 'never') {
-            // Count municipalities that don't have any level assigned
             count = Object.keys(municipalities).length - Object.keys(markedMunicipalities).length;
           } else {
             count = Object.values(markedMunicipalities).filter(level => level === key).length;
@@ -239,8 +268,15 @@ const NorwegianMap = () => {
                 className="legend-color" 
                 style={{ backgroundColor: getColorByLevel(key) }}
               />
-              <span className="legend-label">{value.no}</span>
+              <span className="legend-label">{getCategoryName(key)}</span>
               <span className="legend-count">({count})</span>
+              <button 
+                className="edit-category-btn"
+                onClick={() => handleCategoryEdit(key)}
+                title="Endre navn"
+              >
+                <EditIcon />
+              </button>
             </div>
           );
         })}
@@ -273,6 +309,26 @@ const NorwegianMap = () => {
               {" "}
               US-level/eu
             </a>
+            &
+            <a
+              href="https://smstone0.github.io#/uk-map"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {" "}
+              smstone0
+            </a>
+            <br />
+            <br />
+            Kartdata basert på{" "}
+            <a
+              href="https://github.com/robhop/fylker-og-kommuner"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              fylker-og-kommuner
+            </a>
+            {" "}og Kartverkets geodata (CC BY-SA 4.0)
           </div>
         </div>
       ) : (
@@ -280,11 +336,33 @@ const NorwegianMap = () => {
           <InfoIcon />
         </div>
       )}
+      {showCategoryModal && (
+        <div className="modal-overlay" onClick={() => setShowCategoryModal(false)}>
+          <div className="modal-content" onClick={e => e.stopPropagation()}>
+            <h3>Endre kategori navn</h3>
+            <input
+              type="text"
+              value={editingName}
+              onChange={(e) => setEditingName(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                  handleCategorySave();
+                }
+              }}
+              autoFocus
+            />
+            <div className="modal-buttons">
+              <button onClick={() => setShowCategoryModal(false)}>Avbryt</button>
+              <button onClick={handleCategorySave}>Lagre</button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
 
-function MunicipalityCard({ municipalityName, position, levelClick, currentLevel, translations, getColorByLevel }) {
+function MunicipalityCard({ municipalityName, position, levelClick, currentLevel, translations, getColorByLevel, getCategoryName }) {
   const { x, y } = position;
   return (
     <div
@@ -309,7 +387,7 @@ function MunicipalityCard({ municipalityName, position, levelClick, currentLevel
               borderRadius: '7.5px'
             }}
           >
-            {value.no}
+            {getCategoryName(key)}
           </p>
         ))}
       </div>
