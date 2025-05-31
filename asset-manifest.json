@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/norgeskart-kommuner/static/css/main.ce27c06c.css",
-    "main.js": "/norgeskart-kommuner/static/js/main.7389c4c2.js",
+    "main.js": "/norgeskart-kommuner/static/js/main.c1a3dd86.js",
     "index.html": "/norgeskart-kommuner/index.html",
     "static/media/github-mark-white.svg": "/norgeskart-kommuner/static/media/github-mark-white.3575f325890c752370d47ef0b3d95d62.svg",
     "static/media/close-black.svg": "/norgeskart-kommuner/static/media/close-black.14b72f39bbd07f081c7ea262e2453539.svg",
     "static/media/info.svg": "/norgeskart-kommuner/static/media/info.36bedfbf795ff6906da494f365161926.svg",
     "static/media/edit.svg": "/norgeskart-kommuner/static/media/edit.9dee347da74a8a681fd1d3cdcaef9592.svg",
     "main.ce27c06c.css.map": "/norgeskart-kommuner/static/css/main.ce27c06c.css.map",
-    "main.7389c4c2.js.map": "/norgeskart-kommuner/static/js/main.7389c4c2.js.map"
+    "main.c1a3dd86.js.map": "/norgeskart-kommuner/static/js/main.c1a3dd86.js.map"
   },
   "entrypoints": [
     "static/css/main.ce27c06c.css",
-    "static/js/main.7389c4c2.js"
+    "static/js/main.c1a3dd86.js"
   ]
 }
