@@ -27,6 +27,20 @@ const NorwegianMap = () => {
   const [cardPosition, setCardPosition] = useState({ x: 0, y: 0 });
   const [footnoteOpen, setFootnoteOpen] = useState(false);
 
+  const levelPoints = {
+    'lived': 5,
+    'stayed': 4,
+    'visited': 3,
+    'stopped': 2,
+    'passed': 1
+  };
+
+  const calculateTotalPoints = () => {
+    return Object.values(markedMunicipalities).reduce((total, level) => {
+      return total + (levelPoints[level] || 0);
+    }, 0);
+  };
+
   useEffect(() => {
     const savedData = localStorage.getItem('markedMunicipalities');
     if (savedData) {
@@ -178,6 +192,9 @@ const NorwegianMap = () => {
     <div className="norwegian-map-container">
       <div className="map-controls">
         <h2>{translations.no.title}</h2>
+        <div className="level-display">
+          {translations.no.totalPoints}: {calculateTotalPoints()}
+        </div>
         <div className="map-actions">
           <button onClick={clearMap}>{translations.no.clear}</button>
           <button onClick={downloadMapData}>{translations.no.download}</button>
@@ -229,7 +246,7 @@ const NorwegianMap = () => {
               fillColor: markedMunicipalities[feature.properties.kommunenummer] 
                 ? getColorByLevel(markedMunicipalities[feature.properties.kommunenummer])
                 : 'white',
-              fillOpacity: 0.7,
+              fillOpacity: 0.5,
               color: 'black',
               weight: 1
             })}
@@ -268,7 +285,10 @@ const NorwegianMap = () => {
                 className="legend-color" 
                 style={{ backgroundColor: getColorByLevel(key) }}
               />
-              <span className="legend-label">{getCategoryName(key)}</span>
+              <span className="legend-label">
+                {getCategoryName(key)}
+                {key !== 'never' && ` (${levelPoints[key]}p)`}
+              </span>
               <span className="legend-count">({count})</span>
               <button 
                 className="edit-category-btn"

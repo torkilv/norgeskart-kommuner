@@ -39,7 +39,8 @@ const translations = {
     population: "Befolkning",
     coordinates: "Koordinater",
     legend: "Forklaring",
-    settings: "Innstillinger"
+    settings: "Innstillinger",
+    totalPoints: "Poeng totalt"
   }
 };
 
