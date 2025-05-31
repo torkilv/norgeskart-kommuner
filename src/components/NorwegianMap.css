@@ -163,6 +163,12 @@
   color: black;
 }
 
+.legend-count {
+  margin-left: 8px;
+  color: #666;
+  font-size: 0.9em;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 6px;

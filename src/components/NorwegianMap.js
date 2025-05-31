@@ -225,15 +225,25 @@ const NorwegianMap = () => {
       )}
       <div className="legend">
         <h3>{translations.no.legend}</h3>
-        {Object.entries(categories).map(([key, value]) => (
-          <div key={key} className="legend-item">
-            <div 
-              className="legend-color" 
-              style={{ backgroundColor: getColorByLevel(key) }}
-            />
-            <span className="legend-label">{value.no}</span>
-          </div>
-        ))}
+        {Object.entries(categories).map(([key, value]) => {
+          let count;
+          if (key === 'never') {
+            // Count municipalities that don't have any level assigned
+            count = Object.keys(municipalities).length - Object.keys(markedMunicipalities).length;
+          } else {
+            count = Object.values(markedMunicipalities).filter(level => level === key).length;
+          }
+          return (
+            <div key={key} className="legend-item">
+              <div 
+                className="legend-color" 
+                style={{ backgroundColor: getColorByLevel(key) }}
+              />
+              <span className="legend-label">{value.no}</span>
+              <span className="legend-count">({count})</span>
+            </div>
+          );
+        })}
       </div>
       {footnoteOpen ? (
         <div id="footnote" onMouseLeave={() => setFootnoteOpen(false)}>
